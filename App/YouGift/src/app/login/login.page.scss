@@ -1,0 +1,30 @@
+.login-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.login-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.item-custom{
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}
+.button-custom{
+    --background: #d1ff35;
+    --color: #000;
+    font-size: 14px;
+    width: 90%;
+    text-transform: none;
+    margin-top: 10px;
+}
