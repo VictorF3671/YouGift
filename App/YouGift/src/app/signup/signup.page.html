@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <img src="assets/icon/logo.png" alt="Logo" style="width: 60px; vertical-align: middle;" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-background"> 
+    <div class="login-card"> 
+      <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
+
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label class="label-custom" position="floating">Nome</ion-label>
+        <ion-input type="email" [(ngModel)]="user.nome"></ion-input> 
+      </ion-item>
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label class="label-custom" position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="user.email" ></ion-input> 
+      </ion-item>
+      
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label class="label-custom" position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="user.senha" ></ion-input> 
+      </ion-item>
+
+      <div style="width: 100%; text-align: left; margin-top: 10px;margin-left: 15px; font-size: 14px;">
+        Do you have an account?
+        <ion-label routerLink="/login" style="color: #d1ff35; text-decoration: underline; font-weight: bold;">
+          Login
+        </ion-label>
+      </div>
+      
+      <ion-button
+        (click)="verifySignUp()"
+        class="button-custom">
+        Entrar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
