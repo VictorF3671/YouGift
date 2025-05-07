@@ -1,3 +1,9 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons>
@@ -7,17 +13,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+  
   <div class="login-background"> 
     <div class="login-card"> 
       <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
 
       <ion-item lines="none" class="item-custom"> 
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="email"></ion-input> 
+        <ion-input type="email" [(ngModel)]="this.user.email"></ion-input> 
       </ion-item>
       <ion-item lines="none" class="item-custom"> 
         <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="senha" ></ion-input> 
+        <ion-input type="password" [(ngModel)]="this.user.senha" ></ion-input> 
       </ion-item>
 
       <!-- <div style="width: 100%; text-align: left">
@@ -52,5 +59,6 @@
           Entrar
         </ion-button>
     </div>
+    
 </div>
 </ion-content>

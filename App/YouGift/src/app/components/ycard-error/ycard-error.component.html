@@ -1,0 +1,9 @@
+
+<div *ngIf="visible" class="overlay">
+  <ion-card [ngClass]="type" class="card-erro">
+    <ion-card-content >      
+        <ion-label>{{ message }}</ion-label>
+        <ion-button class="btn-ok" expand="block" (click)="fechar()">OK</ion-button>
+    </ion-card-content>
+</ion-card>
+</div>
