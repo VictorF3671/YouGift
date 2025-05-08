@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   async verifyLogin(){
     console.log("entrei")
        if (!this.user.email || !this.user.senha) {
-        this.mensagemErro = " Preencha todos os campos corretamente";
+        this.mensagemErro = "Preencha todos os campos corretamente";
         this.mostrarErro = true;
         //this.cardType = 'error';
         return;
