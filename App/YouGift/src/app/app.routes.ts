@@ -18,4 +18,12 @@ export const routes: Routes = [
     path: 'signup',
     loadComponent: () => import('./signup/signup.page').then( m => m.SignupPage)
   },
+  {
+    path: 'tela-compra',
+    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage)
+  },
+  {
+    path: 'tela-compra/:nome',
+    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage)
+  },
 ];

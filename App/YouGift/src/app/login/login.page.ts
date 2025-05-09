@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { IUserLogin } from './IUserLogin';
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
+import { IUserLogin } from './IUserLogin';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -17,8 +19,9 @@ export class LoginPage implements OnInit {
   user: IUserLogin = {email:'',senha:''}
   mostrarErro = false;
   mensagemErro = '';
+  
   //cardType = '';
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,8 +33,11 @@ export class LoginPage implements OnInit {
         //this.cardType = 'error';
         return;
     }
-    
+    this.router.navigate(['/home'])
 
+  }
+  navegar() {
+    this.router.navigate(['/signup']);
   }
   fecharErro(){
     this.mostrarErro = false;

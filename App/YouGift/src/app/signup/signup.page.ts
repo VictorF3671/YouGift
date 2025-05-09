@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { IUsuario } from './IUserSignUp';
-
+import { Router } from '@angular/router'
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class SignupPage implements OnInit {
   user: IUsuario = { nome: '', email: '', senha: ''};
   mostrarErro = false;
   mensagemErro = '';
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
@@ -28,8 +28,12 @@ export class SignupPage implements OnInit {
         this.mostrarErro = true;
         return;
     }
+    this.router.navigate(['/home'])
     
 
+  }
+  navegar(){
+    this.router.navigate(['/login'])
   }
   fecharErro(){
     this.mostrarErro = false;
