@@ -20,8 +20,8 @@
           <ion-card-title>{{ gift.nome }} - Digital Gift Card</ion-card-title>
         </ion-col>
 
-        <!-- Lado Direito: Ações -->
-        <ion-col size="12" sizeMd="7">
+        
+        <ion-col style="text-align: center;" size="12" sizeMd="7">
 
           <p>Select your amount</p>
 
@@ -41,14 +41,12 @@
             <ion-button size="small" (click)="decrease()">-</ion-button>
             <ion-text>{{ quantity }}</ion-text>
             <ion-button size="small" (click)="increase()">+</ion-button>
+            <ion-button expand="block" color="warning" (click)="adicionarCarrinho()">Add to Cart</ion-button>
           </div>
-
-          <ion-button expand="block" color="success" (click)="adicionarCarrinho()">Add to Cart</ion-button>
-          <ion-button expand="block" color="warning" (click)="buyNow()">Buy Now</ion-button>
-
-          <!-- Novo botão cancelar -->
-          <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Cancelar Compra</ion-button>
-
+          <div class="container-button"> 
+              <ion-button expand="block" color="success" (click)="buyNow()">Buy Now</ion-button>
+              <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Cancelar Compra</ion-button>
+          </div>
         </ion-col>
 
       </ion-row>
