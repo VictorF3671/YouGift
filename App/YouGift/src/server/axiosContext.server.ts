@@ -9,14 +9,14 @@ export class AxiosContextService {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: '', // Coloque aqui sua URL base
+      baseURL: 'http://localhost:8000/api/',
       headers: {
         'Content-Type': 'application/json'
       }
     });
   }
 
-  getAxios() {
+  getAxiosInstance(): AxiosInstance {
     return this.axiosInstance;
   }
 }
