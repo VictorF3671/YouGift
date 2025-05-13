@@ -8,20 +8,26 @@
   transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.carousel {
+  display: flex;
+  gap: 10px;
 }
 
-#container a {
-  text-decoration: none;
+.gift-card {
+  flex: 0 0 auto;
+  width: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.gift-card:hover {
+  transform: scale(1.05);
 }

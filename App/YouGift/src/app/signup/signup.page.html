@@ -1,3 +1,9 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons>
@@ -27,7 +33,7 @@
 
       <div style="width: 100%; text-align: left; margin-top: 10px;margin-left: 15px; font-size: 14px;">
         Do you have an account?
-        <ion-label routerLink="/login" style="color: #d1ff35; text-decoration: underline; font-weight: bold;">
+        <ion-label (click)="navegar()" style="color: #d1ff35; text-decoration: underline; font-weight: bold;">
           Login
         </ion-label>
       </div>

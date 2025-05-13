@@ -4,37 +4,39 @@
       <img src="assets/icon/logo.png" alt="Logo" style="width: 60px; vertical-align: middle;" />
     </ion-buttons>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" style="display: flex; align-items: center; gap: 8px;">
       <ion-searchbar
         placeholder="Buscar"
         showCancelButton="never"
         (ionInput)="filtrar($event)"
-        style="width: 60% ; font-size: 16px ; height: 40px; border-radius: 20px; text-align: left;">
+        style="width: 250px; font-size: 14px; height: 40px; border-radius: 20px; text-align: left;">
       </ion-searchbar>
-    
-      <ion-button 
-      (click)="userProfile()" 
-      style="height: 40px; width: 40px; border-radius: 50%;">
-      </ion-button>
-  </ion-buttons>
+
+      
+        <ion-button routerLink="/perfil" fill="clear">
+          <ion-icon  slot="icon-only" name="person-circle-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar> 
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Gift Cards</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <ion-card *ngFor="let gift of gifts">
-      <ion-card-header>
-        <ion-card-title>{{ gift.name }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ gift.description }}</p>
-      </ion-card-content>
-    </ion-card>
+    <h2 style="margin-left: 16px;">Novos Gift Cards</h2>
+
+    <div class="carousel-container">
+      <div class="carousel" >
+        <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
+          <img [src]="gift.imagem" />
+          <ion-card-header>
+            <ion-card-title>{{ gift.nome }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ gift.descricao }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+
   </div> 
 </ion-content>
