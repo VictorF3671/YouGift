@@ -1,20 +1,42 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastrar-gift',
   templateUrl: './cadastrar-gift.page.html',
   styleUrls: ['./cadastrar-gift.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, FormsModule, CommonModule]
 })
-export class CadastrarGiftPage implements OnInit {
+export class CadastrarGiftPage {
 
-  constructor() { }
+  gift = {
+    nome: '',
+    descricao: '',
+    imagemUrl: '',
+    precos: [0]
+  };
 
-  ngOnInit() {
+  constructor(private router: Router) {
+    this.verificarPermissao();
   }
 
+  verificarPermissao() {
+    // const user = localStorage.getItem('user'); // ou use AuthService
+    // const isAdmin = user && JSON.parse(user).role === 'admin';
+    // if (!isAdmin) {
+    //   this.router.navigate(['/login']); // ou página de acesso negado
+    // }
+  }
+
+  adicionarPreco() {
+    this.gift.precos.push(0);
+  }
+
+  cadastrarGift() {
+    // aqui tu faz aquele post com o axios , falta o adriano querer
+    console.log('Gift cadastrado:', this.gift);
+  }
 }
