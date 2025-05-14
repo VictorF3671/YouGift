@@ -40,18 +40,21 @@ export class LoginPage implements OnInit {
     try{
       console.log(this.user)
       const response = await this.axios.post('/token/', this.user)
-      console.log(response.data.success)
      
-      if(response.data.success){
-        const token = response.data.token
+      if(response.data.access){
+        const token = response.data.access
         localStorage.setItem('token', token)
         console.log(localStorage.getItem(token))
         this.router.navigate(['/home'])
       }
-    }catch(error){
-       this.mensagemErro = "Erro na conexão com o servidor";
-       this.mostrarErro = true;
-    }
+    }catch (error: any) {
+  if (error.response && error.response.status === 401) {
+    this.mensagemErro = "Usuário ou senha incorretos";
+  } else {
+    this.mensagemErro = "Erro na conexão com o servidor";
+  }
+  this.mostrarErro = true;
+}
   
     
   }
