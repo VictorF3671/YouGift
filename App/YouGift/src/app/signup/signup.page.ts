@@ -31,10 +31,10 @@ export class SignupPage implements OnInit {
     }
     try {
       const response = this.axios.post('/Cadastro/', this.user)
-      if (response.data.success) {
-        this.router.navigate(['/login'])
+      // if (response.data.success) {
+      //   this.router.navigate(['/login'])
 
-      }
+      // }
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
         this.mensagemErro = "Usuário ou senha incorretos";
