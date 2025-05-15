@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { IUsuario } from './IUserSignUp';
 import { Router } from '@angular/router'
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
+import { AxiosContextService } from 'src/server/axiosContext.server';
 
 @Component({
   selector: 'app-signup',
@@ -14,28 +15,40 @@ import { YCardErrorComponent } from '../components/ycard-error/ycard-error.compo
   imports: [IonicModule, CommonModule, FormsModule, YCardErrorComponent]
 })
 export class SignupPage implements OnInit {
-  user: IUsuario = { nome: '', email: '', senha: ''};
+  private axios = this.axiosContext.getAxiosInstance();
+  user: IUsuario = { nome: '', email: '', cpf: '', senha: '' };
   mostrarErro = false;
   mensagemErro = '';
-  constructor(private router : Router) { }
+  constructor(private router: Router, private axiosContext: AxiosContextService) { }
 
   ngOnInit() {
   }
-  async verifySignUp(){
-      console.log(this.user)
-    if(!this.user.email || !this.user.nome || !this.user.senha){
-        this.mensagemErro = " Preencha todos os campos corretamente";
-        this.mostrarErro = true;
-        return;
+  async verifySignUp() {
+    if (!this.user.email || !this.user.nome || !this.user.senha || !this.user.cpf) {
+      this.mensagemErro = " Preencha todos os campos corretamente";
+      this.mostrarErro = true;
+      return;
     }
-    this.router.navigate(['/home'])
-    
+    try {
+      const response = this.axios.post('/Cadastro/', this.user)
+      if (response.data.success) {
+        this.router.navigate(['/login'])
+
+      }
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {
+        this.mensagemErro = "Usuário ou senha incorretos";
+      } else {
+        this.mensagemErro = "Erro na conexão com o servidor";
+      }
+      this.mostrarErro = true;
+    }
 
   }
-  navegar(){
+  navegar() {
     this.router.navigate(['/login'])
   }
-  fecharErro(){
+  fecharErro() {
     this.mostrarErro = false;
   }
 }
