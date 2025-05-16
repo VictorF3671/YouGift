@@ -30,4 +30,8 @@ export const routes: Routes = [
     path: 'cadastrar-gift',
     loadComponent: () => import('./cadastrar-gift/cadastrar-gift.page').then( m => m.CadastrarGiftPage)
   },
+  {
+    path: 'tela-pagamento',
+    loadComponent: () => import('./tela-pagamento/tela-pagamento.page').then( m => m.TelaPagamentoPage)
+  },
 ];

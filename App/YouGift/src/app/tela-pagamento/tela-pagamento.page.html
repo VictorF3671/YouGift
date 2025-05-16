@@ -1,0 +1,66 @@
+<ycard-error [message]="mensagemErro" [type]="'error'" [visible]="mostrarErro" (onClose)="fecharErro()">
+</ycard-error>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment color="warning" [(ngModel)]="metodoSelecionado">
+    <ion-segment-button value="cartao">
+      <ion-label>Cartão</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pix">
+      <ion-label>Pix</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="metodoSelecionado === 'cartao'" class="pagamento-card">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pagamento com Cartão</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-item lines="none" class="item-custom">
+          <ion-label position="floating">Número do Cartão</ion-label>
+          <ion-input type="text" [(ngModel)]="dadosCartao.numero"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="item-custom">
+          <ion-label position="floating">Nome no Cartão</ion-label>
+          <ion-input type="text" [(ngModel)]="dadosCartao.nome"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="item-custom">
+          <ion-label position="floating">Validade (MM/AA)</ion-label>
+          <ion-input type="text" [(ngModel)]="dadosCartao.validade"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="item-custom">
+          <ion-label position="floating">CVV</ion-label>
+          <ion-input type="password" maxlength="3" [(ngModel)]="dadosCartao.cvv"></ion-input>
+        </ion-item>
+
+        <div class="container-button">
+        <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Voltar</ion-button>
+        <ion-button  expand="block" type="submit" color="success">Validar</ion-button>
+      </div>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="metodoSelecionado === 'pix'" class="pagamento-pix">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pagamento via Pix</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ion-text-center">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=chave-pix-aqui&size=200x200" alt="QR Code Pix">
+        <p class="ion-padding-top">Escaneie o QR Code para concluir o pagamento</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
