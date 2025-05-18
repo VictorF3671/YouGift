@@ -45,10 +45,10 @@ export class TelaCompraPage {
 
   buyNow() {
     console.log('Comprando:', this.gift.nome, this.valorSelecionado, this.quantity);
+    this.routerN.navigate(['/tela-pagamento']);
   }
   
   navegarHome() {
-    // Aqui você pode redirecionar para a home ou outra página
     this.routerN.navigate(['/home']);
   }
 }

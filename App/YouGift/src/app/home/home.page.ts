@@ -44,7 +44,12 @@ export class HomePage {
     slidesPerView: 2.2,
     spaceBetween: 10
   };
-  
+
+    irCadastro() {
+    
+    this.router.navigate(['/cadastrar-gift']);
+  }
+
   abrirDetalhe(gift: any) {
     
     this.router.navigate(['/tela-compra', gift.nome]);

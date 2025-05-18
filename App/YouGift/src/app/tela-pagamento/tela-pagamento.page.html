@@ -1,0 +1,84 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <!-- Lado esquerdo: Métodos de pagamento -->
+      <ion-col size="12" sizeMd="6">
+        <ion-segment [(ngModel)]="metodoSelecionado">
+          <ion-segment-button value="cartao">
+            <ion-label>Cartão</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="pix">
+            <ion-label>PIX</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <!-- Cartão -->
+        <div *ngIf="metodoSelecionado === 'cartao'" class="metodo-box">
+          <ion-item lines="none" class="item-custom">
+            <ion-label position="floating">Número do Cartão</ion-label>
+            <ion-input type="text" [(ngModel)]="cartao.numero"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="item-custom">
+            <ion-label position="floating">Nome no Cartão</ion-label>
+            <ion-input type="text" [(ngModel)]="cartao.nome"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="item-custom">
+            <ion-label position="floating">Validade (MM/AA)</ion-label>
+            <ion-input type="text" [(ngModel)]="cartao.validade"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="item-custom">
+            <ion-label position="floating">CVV</ion-label>
+            <ion-input type="password" [(ngModel)]="cartao.cvv"></ion-input>
+          </ion-item>
+        </div>
+
+        
+        <div *ngIf="metodoSelecionado === 'pix'" >
+          <div class="alinhei"> 
+          <ion-label>Use o QR Code abaixo para pagar com PIX: </ion-label>
+          
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=chave-pix-aqui&size=200x200" alt="QR Code PIX" style="width: 200px; margin-top: 10px;">
+        </div>
+        </div>
+      </ion-col>
+
+      <!-- Lado direito: Resumo da compra -->
+      <ion-col size="12" sizeMd="6" class="ion-align-self-center">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+          <ion-card style="width: 100%; max-width: 400px;">
+            <ion-card-header>
+              <ion-card-title>Resumo da Compra</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p><strong>Produto:</strong> {{gift.nome}}</p>
+              <p><strong>Valor unitário:</strong> R$ {{gift.valor}}</p>
+              <p><strong>Quantidade:</strong> {{quantidade}}</p>
+              <p><strong>Total:</strong> <strong style="color: #3880ff;">R$ {{gift.valor * quantidade}}</strong></p>
+            </ion-card-content>
+          </ion-card>
+          <div class="container-button">
+          <ion-button expand="block"  color="warning" fill="outline" (click)="navegarHome()">Cancelar</ion-button>
+          <ion-button expand="block"  color="success" (click)="finalizarCompra()">
+            Finalizar Compra
+          </ion-button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

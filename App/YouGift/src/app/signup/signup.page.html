@@ -19,13 +19,18 @@
 
       <ion-item lines="none" class="item-custom"> 
         <ion-label class="label-custom" position="floating">Nome</ion-label>
-        <ion-input type="email" [(ngModel)]="user.nome"></ion-input> 
+        <ion-input type="text" [(ngModel)]="user.nome"></ion-input> 
       </ion-item>
       <ion-item lines="none" class="item-custom"> 
         <ion-label class="label-custom" position="floating">Email</ion-label>
         <ion-input type="email" [(ngModel)]="user.email" ></ion-input> 
       </ion-item>
       
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label class="label-custom" position="floating">CPF</ion-label>
+        <ion-input type="text" [(ngModel)]="user.cpf" ></ion-input> 
+      </ion-item>
+
       <ion-item lines="none" class="item-custom"> 
         <ion-label class="label-custom" position="floating">Senha</ion-label>
         <ion-input type="password" [(ngModel)]="user.senha" ></ion-input> 

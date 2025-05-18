@@ -1,3 +1,9 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
 <ion-header>
   <ion-toolbar>
     <ion-title>Cadastro de Gift</ion-title>
@@ -8,20 +14,29 @@
   <div class="login-background"> 
     <div class="login-card"> 
       <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
-      <ion-input class="button-custom" label="Nome do Gift Card" label-placement="floating" fill="outline" [(ngModel)]="gift.nome" name="nome" required></ion-input>
 
-      <ion-input class="button-custom" label="Descrição" label-placement="floating" fill="outline" [(ngModel)]="gift.descricao" name="descricao"></ion-input>
-  
-      <ion-input class="button-custom" label="URL da Imagem" label-placement="floating" fill="outline" [(ngModel)]="gift.imagemUrl" name="imagemUrl" required></ion-input>
-    
-
-    
-      <ion-input *ngFor="let preco of gift.precos; let i = index" class="button-custom" label="Preço {{ i + 1}}" label-placement="floating" fill="outline"  [(ngModel)]="gift.precos[i]" name="preco{{i}}"></ion-input>
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">Nome do Gift Card</ion-label>
+        <ion-input type="text" [(ngModel)]="gift.nome"></ion-input> 
+      </ion-item>
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input type="text" [(ngModel)]="gift.descricao"></ion-input> 
+      </ion-item>
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">URL da Imagem</ion-label>
+        <ion-input type="text" [(ngModel)]="gift.imagemURL"></ion-input> 
+      </ion-item>
       
-    <ion-button expand="block" (click)="adicionarPreco()">Adicionar Preço</ion-button>
-
-    <ion-button expand="block" type="submit" color="success">Cadastrar</ion-button>
-
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input type="text" mask="00.0" [(ngModel)]="gift.preco"></ion-input> 
+      </ion-item>
+      
+      <div class="container-button">
+        <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Voltar</ion-button>
+        <ion-button  expand="block" type="submit" color="success">Cadastrar</ion-button>
+      </div>
 
     </div>
   </div>

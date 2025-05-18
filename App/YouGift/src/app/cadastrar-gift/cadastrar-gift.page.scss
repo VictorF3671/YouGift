@@ -16,7 +16,10 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     text-align: left;
 }
-
+ .container-button{
+  display: flex;
+  justify-content: end;
+}
 .button-custom{
     margin-bottom: 10px;
 }
