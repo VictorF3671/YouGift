@@ -19,14 +19,28 @@ export class TelaPagamentoPage implements OnInit {
 
   ngOnInit() {
   }
-  metodoSelecionado: 'cartao' | 'pix' = 'cartao';
+ 
 
-  dadosCartao = {
-    numero: '',
-    nome: '',
-    validade: '',
-    cvv: ''
-  };
+metodoSelecionado: string = 'cartao';
+cartao = {
+  numero: '',
+  nome: '',
+  validade: '',
+  cvv: ''
+};
+
+gift = {
+  nome: 'Netflix 50',
+  valor: 50
+};
+
+quantidade = 1;
+
+finalizarCompra() {
+  const total = this.gift.valor * this.quantidade;
+  console.log('Compra finalizada. Total:', total);
+  // Chamada da API, geração dos seriais, envio por e-mail etc.
+}
   fecharErro() {
     this.mostrarErro = false;
   }
