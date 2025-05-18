@@ -9,10 +9,9 @@ figma: https://www.figma.com/design/WNJZn9OegabITyrWaEXm4V/WebsiteE?node-id=124-
 
 Tipo	Para quê?
 
-
 feat = Nova funcionalidade
 fix	= Correção de bug
-docs = 	Mudança apenas em documentação
+docs = Mudança apenas em documentação
 style	= Formatação, identação, espaços, etc (sem alterar lógica)
 refactor = Refatoração de código (sem mudar comportamento)
 test = Adição ou alteração de testes
