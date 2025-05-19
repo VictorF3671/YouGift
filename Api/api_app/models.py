@@ -29,16 +29,10 @@ class User(models.Model):
       
         
 class BankAccount(models.Model):
-    CARD_TYPES = (
-        ("credit", "Cartão de Crédito"),
-        ("debit", "Cartão de Débito"),
-    )
-
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bank_accounts')
     cvv_encrypted = models.TextField()
     card_number_encrypted = models.TextField()
     card_holder_name = models.CharField(max_length=255)
-    card_type = models.CharField(max_length=10, choices=CARD_TYPES)
     expiration_date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -125,8 +119,7 @@ class GiftCardSerial(models.Model):
 
 class SaleHistory(models.Model):
     PAYMENT_METHODS = (
-        ("credit", "Cartão de Crédito"),
-        ("debit", "Cartão de Débito"),
+        ("card", "Cartão"),
         ("pix", "Pix"),
     )
 
