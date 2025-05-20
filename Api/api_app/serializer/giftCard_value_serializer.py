@@ -4,4 +4,4 @@ from rest_framework import serializers
 class GiftCardValueSerializer(serializers.ModelSerializer):
     class Meta:
         model = GiftCardValue
-        fields = '__all__'
+        fields = '__all__' 
