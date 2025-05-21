@@ -79,6 +79,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+AUTH_USER_MODEL = 'api_app.User'
 SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False,
     'SECURITY_DEFINITIONS': {

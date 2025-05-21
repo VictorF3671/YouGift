@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 # Create your models here.
 
@@ -8,24 +9,38 @@ class UserGroup(models.Model):
     def __str__(self):
         return self.access_level
   
-    
-class User(models.Model):
+class UserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('Email é obrigatório')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)  # use hash
+        user.save()
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        return self.create_user(email, password, **extra_fields)    
+       
+class User(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(unique=True)
     cpf = models.CharField(max_length=11, unique=True)
     fullname = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
-    password_hash = models.CharField(max_length=255)
-    username = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=11)
+    group = models.ForeignKey('UserGroup', on_delete=models.CASCADE, related_name='users')
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    group = models.ForeignKey(UserGroup, on_delete=models.CASCADE, related_name='users')
-    
-    class Meta:
-        ordering = ["fullname"]
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['fullname']
 
     def __str__(self):
-        return self.fullname
+        return self.email
       
         
 class BankAccount(models.Model):
@@ -90,6 +105,7 @@ class GiftCardOrder(models.Model):
     
 class GiftCardOrderItem(models.Model):
     order = models.ForeignKey(GiftCardOrder, on_delete=models.CASCADE, related_name='items')
+    gift_card_value = models.ForeignKey(GiftCardValue, on_delete=models.CASCADE,null=True)
     gift_card = models.ForeignKey(GiftCard, on_delete=models.CASCADE, related_name='order_items')
     quantity = models.PositiveIntegerField()
 

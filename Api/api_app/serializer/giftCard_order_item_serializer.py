@@ -1,12 +1,8 @@
-from ..models import GiftCardOrderItem
+from ..models import GiftCard, GiftCardValue
 from rest_framework import serializers
-from ..serializer import GiftCardSerializer,GiftCardOrderSerializer
 
 
-class GiftCardOrderItemSerializer(serializers.ModelSerializer):
-    order = GiftCardOrderSerializer(read_only=True)
-    gift_card = GiftCardSerializer(read_only=True)
-    
-    class Meta:
-        model = GiftCardOrderItem
-        fields = ['order', 'gift_card','quantity']
+class GiftCardOrderItemSerializer(serializers.Serializer):
+    gift_card = serializers.PrimaryKeyRelatedField(queryset=GiftCard.objects.all())
+    gift_card_value = serializers.PrimaryKeyRelatedField(queryset=GiftCardValue.objects.all())
+    quantity = serializers.IntegerField(min_value=1)

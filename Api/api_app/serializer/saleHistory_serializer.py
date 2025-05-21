@@ -1,6 +1,7 @@
 from ..models import SaleHistory
 from rest_framework import serializers
-from ..serializer import GiftCardOrderSerializer, UserSerializer
+from ..serializer.giftCard_order_serializer import GiftCardOrderSerializer
+from ..serializer.user_serializer import UserSerializer
 
 class SaleHistorySerializer(serializers.ModelSerializer):
     order = GiftCardOrderSerializer(read_only=True)
