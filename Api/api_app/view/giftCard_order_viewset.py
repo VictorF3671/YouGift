@@ -4,11 +4,8 @@ from rest_framework import viewsets
 from django.utils import timezone
 from ..serializer.giftCard_order_serializer import GiftCardOrderCreateSerializer
 
-from ..models import (
-    GiftCardOrder,
-    GiftCardSerial,
-    SaleHistory,
-)
+from ..models import GiftCardOrder
+ 
 
 
 class GiftCardOrderViewSet(viewsets.ModelViewSet):
