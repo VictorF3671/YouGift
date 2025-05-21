@@ -22,8 +22,7 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, password=None, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
-        extra_fields.setdefault("group_id", 2)  # Define o grupo admin por padrão
-
+        extra_fields.setdefault("group_id", 1)
         return self.create_user(email, password, **extra_fields)
        
 class User(AbstractUser):
@@ -43,21 +42,7 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-      
-        
-class BankAccount(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bank_accounts')
-    cvv_encrypted = models.TextField()
-    card_number_encrypted = models.TextField()
-    card_holder_name = models.CharField(max_length=255)
-    expiration_date = models.DateField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["card_holder_name"]
-        verbose_name = 'Bank Account'
-        verbose_name_plural = 'Bank Accounts'
-     
+    
     
 class GiftCard(models.Model):
     name = models.CharField(max_length=255)
@@ -86,41 +71,9 @@ class GiftCardValue(models.Model):
         verbose_name_plural = 'Gift Card Values'
 
 
-class GiftCardOrder(models.Model):
-    STATUS_CHOICES = [
-        ("pending", "Aguardando Pagamento"),
-        ("paid", "Pago"),
-        ("cancelled", "Cancelado"),
-    ]
-    
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
-    is_paid = models.BooleanField(default=False)
-    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
-
-    class Meta:
-        ordering = ['id']
-        verbose_name = 'Gift Card Order'
-        verbose_name_plural = 'Gift Card Orders'
-    
-    
-class GiftCardOrderItem(models.Model):
-    order = models.ForeignKey(GiftCardOrder, on_delete=models.CASCADE, related_name='items')
-    gift_card_value = models.ForeignKey(GiftCardValue, on_delete=models.CASCADE,null=True)
-    gift_card = models.ForeignKey(GiftCard, on_delete=models.CASCADE, related_name='order_items')
-    quantity = models.PositiveIntegerField()
-
-    class Meta:
-        ordering = ["id"]
-        verbose_name = 'Gift Card Order Item'
-        verbose_name_plural = 'Gift Card Order Items'
-        
-
 class GiftCardSerial(models.Model):
     gift_card = models.ForeignKey(GiftCard, on_delete=models.CASCADE, related_name="serials")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='giftcard_serials')
-    order_item = models.ForeignKey(GiftCardOrderItem, on_delete=models.CASCADE, related_name='serials')
     code = models.CharField(max_length=16, unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -134,22 +87,3 @@ class GiftCardSerial(models.Model):
         ordering = ["code"]
         verbose_name = 'Gift Card Serial'
         verbose_name_plural = 'Gift Card Serials'
-
-class SaleHistory(models.Model):
-    PAYMENT_METHODS = (
-        ("card", "Cartão"),
-        ("pix", "Pix"),
-    )
-
-    order = models.OneToOneField(GiftCardOrder, on_delete=models.CASCADE, related_name='sale_history')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sale_history')
-    bank_account = models.ForeignKey(BankAccount, on_delete=models.SET_NULL, null=True, blank=True, related_name='sale_history')
-    payment_method = models.CharField(max_length=10, choices=PAYMENT_METHODS, default="credit")
-    transaction_code = models.CharField(max_length=100, blank=True, null=True)
-    is_confirmed = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['-created_at']
-        verbose_name = 'Sale History'
-        verbose_name_plural = 'Sale Histories'
