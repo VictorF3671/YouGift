@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserGroup,User,BankAccount,GiftCardValue,GiftCard,GiftCardOrder,GiftCardOrderItem,GiftCardSerial
+from .models import UserGroup,User,BankAccount,GiftCardValue,GiftCard,GiftCardOrder,GiftCardOrderItem,GiftCardSerial,SaleHistory
 
 # Register your models here.
 admin.site.register(UserGroup)
@@ -9,4 +9,5 @@ admin.site.register(GiftCardSerial)
 admin.site.register(GiftCardOrder)
 admin.site.register(GiftCardValue)
 admin.site.register(GiftCard)
+admin.site.register(SaleHistory)
 admin.site.register(GiftCardOrderItem)
