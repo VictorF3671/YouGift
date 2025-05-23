@@ -25,6 +25,11 @@ class RegistrarUsuario
         if ($this->usuarioRepository->buscarPorEmail($email)) {
             throw new \DomainException("Email já está em uso.");
         }
+
+        if ($this->usuarioRepository->buscarPorUsername($nomeUsuario)) {
+            throw new \DomainException("Nome já está em uso.");
+        }
+        
         
         $senhaHash = password_hash($dados['senha'], PASSWORD_BCRYPT);
 

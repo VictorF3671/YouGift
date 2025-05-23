@@ -10,6 +10,8 @@ interface IUsuarioRepository
 
     public function buscarPorId(int $id): ?Usuario;
 
+    public function buscarPorUsername(string $username): ?Usuario;
+
     public function buscarPorEmail(string $email): ?Usuario;
 
     public function buscarPorCpf(string $cpf): ?Usuario;

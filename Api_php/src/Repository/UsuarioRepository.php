@@ -57,6 +57,13 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
         return $orm ? $this->mapearParaDominio($orm) : null;
     }
 
+    public function buscarPorUsername(string $username): ?UsuarioDomain
+    {
+        $orm = $this->findOneBy(['nomeUsuario' => $username]);
+        return $orm ? $this->mapearParaDominio($orm) : null;
+    }
+
+
     public function listarTodos(): array
     {
         return array_map(
@@ -73,6 +80,7 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
             $this->em->flush();
         }
     }
+
 
     private function mapearParaDominio(Usuario $orm): UsuarioDomain
     {
