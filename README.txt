@@ -20,3 +20,10 @@ style = Formatação, identação, espaços, etc (sem alterar lógica)
 refactor = Refatoração de código (sem mudar comportamento)
 test = Adição ou alteração de testes
 chore = Tarefas que não afetam o código de produção (ex: configs, builds)
+
+Api_PHP
+
+Implementar a logica existente do Django,
+adicionar as novas funcionalidades,
+adicionar o swagger,
+
