@@ -1,0 +1,9 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: 'YouGift API'
+            description: 'API REST para gestão de gift cards digitais'
+            version: 1.0.0
+    areas:
+        default: # to filter documented areas
+            path_patterns: [ ^/api ]

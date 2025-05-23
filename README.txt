@@ -27,3 +27,24 @@ Implementar a logica existente do Django,
 adicionar as novas funcionalidades,
 adicionar o swagger,
 
+
+
+| **usuarios**                           | `id`, `cpf`, `nome`, `nome_usuario`, `telefone`, `email`, `senha`, `grupo`, `criado_em`           
+
+| **empresas**                           | `id`, `nome`, `logo_url`, `site`, `criado_em`                                                     
+
+| **produtos\_giftcard**                 | `id`, `empresa_id`, `valor`, `descricao`, `criado_em`                                             
+
+| **carrinhos**                          | `id`, `usuario_id`, `status` (`aberto`, `convertido`, `abandonado`), `criado_em`, `atualizado_em` 
+
+| **itens\_carrinho**                    | `id`, `carrinho_id`, `produto_giftcard_id`, `quantidade`, `preco_unitario`                        
+
+| **vendas**                             | `id`, `usuario_id`, `carrinho_id`, `valor_total`, `criado_em`                                     
+
+| **itens\_venda**                       | `id`, `venda_id`, `produto_giftcard_id`, `quantidade`, `preco_unitario`                           
+
+| **seriais\_giftcard**                  | `id`, `venda_id`, `produto_giftcard_id`, `codigo_serial`, `gerado_em`, `status`                   
+
+| **cartoes** *(opcional)*               | `id`, `usuario_id`, `numero_cartao`, `nome_titular`, `validade`, `cvv`, `criado_em`               
+
+| **transacoes\_pagamento** *(opcional)* | `id`, `venda_id`, `metodo`, `status`, `id_externo`, `criado_em`                                   
