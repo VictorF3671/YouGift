@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    canActivate: [AuthGuard] 
   },
   {
     path: '',
@@ -12,7 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage), 
   },
   {
     path: 'signup',
@@ -20,18 +22,26 @@ export const routes: Routes = [
   },
   {
     path: 'tela-compra',
-    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage)
+    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage),
+    canActivate: [AuthGuard] 
   },
   {
     path: 'tela-compra/:nome',
-    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage)
+    loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage),
+    canActivate: [AuthGuard] 
   },
   {
     path: 'cadastrar-gift',
-    loadComponent: () => import('./cadastrar-gift/cadastrar-gift.page').then( m => m.CadastrarGiftPage)
+    loadComponent: () => import('./cadastrar-gift/cadastrar-gift.page').then( m => m.CadastrarGiftPage),
+    canActivate: [AuthGuard] 
   },
   {
     path: 'tela-pagamento',
-    loadComponent: () => import('./tela-pagamento/tela-pagamento.page').then( m => m.TelaPagamentoPage)
+    loadComponent: () => import('./tela-pagamento/tela-pagamento.page').then( m => m.TelaPagamentoPage),
+    canActivate: [AuthGuard] 
+  },
+  {
+    path: 'gifts-cadastrados',
+    loadComponent: () => import('./gifts-cadastrados/gifts-cadastrados.page').then( m => m.GiftsCadastradosPage)
   },
 ];

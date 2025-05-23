@@ -13,14 +13,29 @@
       </ion-searchbar>
 
       
-        <ion-button (click)="irCadastro()" >
-          <ion-icon  slot="icon-only" name="person-circle-outline" ></ion-icon>
-        </ion-button>
+        <ion-button (click)="abrirMenu($event)">Opções
+  <!-- <ion-icon slot="icon-only" name="home" color="primary"></ion-icon> -->
+</ion-button>
+
+<ion-popover
+  [isOpen]="mostrarMenu"
+  [event]="eventoDoBotao"
+  (didDismiss)="mostrarMenu = false">
+  <ng-template>
+    <ion-list>
+      <ion-item button (click)="irPerfil()">Perfil</ion-item>
+      <ion-item button (click)="irHistorico()">Histórico de Compras</ion-item>
+      <ion-item *ngIf="isAdmin" button (click)="irUsuarios()">Usuários</ion-item>
+      <ion-item *ngIf="isAdmin" button (click)="irGiftsCadastrados()">Gifts Cadastrados</ion-item>
+      <ion-item button (click)="logout()">Sair</ion-item>
+    </ion-list>
+  </ng-template>
+</ion-popover>
       </ion-buttons>
   </ion-toolbar> 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="container-geral" [fullscreen]="true">
   <div id="container">
     <h2 style="margin-left: 16px;">Novos Gift Cards</h2>
 
@@ -38,5 +53,22 @@
       </div>
     </div>
 
-  </div> 
+    
+    <h2 style="margin-left: 16px;">Gifts Mais Vendidos</h2>
+    <div class="carousel-container">
+      <div class="carousel" >
+        <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
+          <img [src]="gift.imagem" />
+          <ion-card-header>
+            <ion-card-title>{{ gift.nome }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ gift.descricao }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    </div>
+  
+
 </ion-content>

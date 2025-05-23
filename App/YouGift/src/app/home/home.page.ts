@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router'
@@ -7,11 +7,14 @@ import { Router } from '@angular/router'
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule ],
+  imports: [IonicModule, CommonModule],
 })
 
-export class HomePage {
-  constructor(private router: Router) {}
+export class HomePage implements OnInit{
+  constructor(private router: Router) { }
+  mostrarMenu = false;
+  eventoDoBotao: any;
+  isAdmin = false;
   giftcards = [
     {
       nome: 'Netflix',
@@ -39,19 +42,26 @@ export class HomePage {
       imagem: './assets/amazon.png'
     }
   ];
+
+  ngOnInit() {
+  const role = localStorage.getItem('group'); 
+  console.log(role)
+  this.isAdmin = role === 'admin';
+  }
   
+
   slideOpts = {
     slidesPerView: 2.2,
     spaceBetween: 10
   };
 
-    irCadastro() {
-    
+  irCadastro() {
+
     this.router.navigate(['/cadastrar-gift']);
   }
 
   abrirDetalhe(gift: any) {
-    
+
     this.router.navigate(['/tela-compra', gift.nome]);
   }
 
@@ -62,6 +72,36 @@ export class HomePage {
   userProfile() {
     this.router.navigate(['/profile']);
   }
+  abrirMenu(event: any) {
+    this.eventoDoBotao = event;
+    this.mostrarMenu = true;
+  }
+
+  irPerfil() {
+    this.mostrarMenu = false;
+    this.router.navigate(['/perfil']);
+  }
+
+  irHistorico() {
+    this.mostrarMenu = false;
+    this.router.navigate(['/historico']);
+  }
+
+  irUsuarios() {
+    this.mostrarMenu = false;
+    this.router.navigate(['/usuarios']);
+  }
+
+  irGiftsCadastrados() {
+    this.mostrarMenu = false;
+    this.router.navigate(['/gifts-cadastrados']);
+  }
+
+  logout() {
+    this.mostrarMenu = false;
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
 }
 
- 
+

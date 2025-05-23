@@ -18,7 +18,7 @@ import axios from 'axios';
 })
 export class LoginPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
-  user: IUserLogin = {username:'',password:''}
+  user: IUserLogin = {email:'',password:''}
   mostrarErro = false;
   mensagemErro = '';
   
@@ -26,12 +26,13 @@ export class LoginPage implements OnInit {
   constructor(private router: Router, private axiosContext: AxiosContextService) { }
 
   ngOnInit() {
-      
+      localStorage.removeItem('token');
+      localStorage.getItem('token')
   }
 
   async verifyLogin(){
      console.log("entrei")
-       if (!this.user.username || !this.user.password) {
+       if (!this.user.email || !this.user.password) {
         this.mensagemErro = "Preencha todos os campos corretamente";
         this.mostrarErro = true;
         return;
@@ -39,12 +40,14 @@ export class LoginPage implements OnInit {
      }
     try{
       console.log(this.user)
-      const response = await this.axios.post('/token/', this.user)
+      const response = await this.axios.post('/login/', this.user)
      
-      if(response.data.access){
-        const token = response.data.access
+      if(response.data.token){
+        const token = response.data.token
         localStorage.setItem('token', token)
-        console.log(localStorage.getItem(token))
+        localStorage.setItem('group', 'admin' )
+        // const group = response.data.group
+        // localStorage.setItem('group', group.toString())
         this.router.navigate(['/home'])
       }
     }catch (error: any) {

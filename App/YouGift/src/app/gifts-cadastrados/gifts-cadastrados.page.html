@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Histórico de Gift Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="display: flex; justify-content: flex-end; margin-bottom: 16px;">
+    <ion-button (click)="irCadastrarGift()">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
+      Cadastrar Novo Gift
+    </ion-button>
+  </div>
+
+  <ion-grid>
+    <ion-row class="table-header" style="font-weight: bold;">
+      <ion-col size="1">ID</ion-col>
+      <ion-col size="2">Nome</ion-col>
+      <ion-col size="2">Descrição</ion-col>
+      <ion-col size="3">Imagem</ion-col>
+      <ion-col size="2">Empresa</ion-col>
+      <ion-col size="2">Criado em</ion-col>
+      <ion-col size="1">Ações</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let gift of giftcards">
+      <ion-col size="1">{{ gift.id }}</ion-col>
+      <ion-col size="2">{{ gift.nome }}</ion-col>
+      <ion-col size="2">{{ gift.descricao }}</ion-col>
+      <ion-col size="3">
+        <img [src]="gift.imagem" alt="Imagem" style="width: 100px; height: auto;" />
+      </ion-col>
+      <ion-col size="2">{{ gift.empresa }}</ion-col>
+      <ion-col size="2">{{ gift.createdAt | date: 'short' }}</ion-col>
+      <ion-col size="1">
+        <ion-button color="danger" fill="clear" (click)="excluirGift(gift.id)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
