@@ -26,7 +26,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard] 
   },
   {
-    path: 'tela-compra/:nome',
+    path: 'tela-compra/:id',
     loadComponent: () => import('./tela-compra/tela-compra.page').then( m => m.TelaCompraPage),
     canActivate: [AuthGuard] 
   },
@@ -43,5 +43,9 @@ export const routes: Routes = [
   {
     path: 'gifts-cadastrados',
     loadComponent: () => import('./gifts-cadastrados/gifts-cadastrados.page').then( m => m.GiftsCadastradosPage)
+  },  {
+    path: 'cadastrar-valor',
+    loadComponent: () => import('./cadastrar-valor/cadastrar-valor.page').then( m => m.CadastrarValorPage)
   },
+
 ];

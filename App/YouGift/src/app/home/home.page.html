@@ -42,12 +42,12 @@
     <div class="carousel-container">
       <div class="carousel" >
         <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
-          <img [src]="gift.imagem" />
+          <img [src]="gift.image_url" />
           <ion-card-header>
-            <ion-card-title>{{ gift.nome }}</ion-card-title>
+            <ion-card-title>{{ gift.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ gift.descricao }}
+            {{ gift.desc }}
           </ion-card-content>
         </ion-card>
       </div>
@@ -58,12 +58,12 @@
     <div class="carousel-container">
       <div class="carousel" >
         <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
-          <img [src]="gift.imagem" />
+          <img [src]="gift.image_url" />
           <ion-card-header>
-            <ion-card-title>{{ gift.nome }}</ion-card-title>
+            <ion-card-title>{{ gift.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ gift.descricao }}
+            {{ gift.desc }}
           </ion-card-content>
         </ion-card>
       </div>
