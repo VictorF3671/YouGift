@@ -18,4 +18,8 @@ services:
     Core\UseCase\Usuario\RegistrarUsuario:
         arguments:
             $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
+
+    Core\UseCase\Usuario\VisualizarUsuario:
+        arguments:
+            $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
         
