@@ -1,0 +1,35 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content class="ion-padding">
+  <div class="login-background"> 
+    <div class="login-card"> 
+      <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
+
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">Nome do Gift Card</ion-label>
+        <ion-input type="text" [(ngModel)]="gift.nome"></ion-input> 
+      </ion-item>
+      
+      <ion-item lines="none" class="item-custom"> 
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input type="text" mask="00.0" [(ngModel)]="gift.preco"></ion-input> 
+      </ion-item>
+      
+      <div class="container-button">
+        <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Voltar</ion-button>
+        <ion-button  expand="block" type="submit" color="success">Cadastrar</ion-button>
+      </div>
+
+    </div>
+  </div>
+</ion-content> -->

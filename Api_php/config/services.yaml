@@ -1,0 +1,25 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true      
+        autoconfigure: true 
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    Core\Domain\Usuario\Repository\IUsuarioRepository: '@App\Repository\UsuarioRepository'
+    
+
+    Core\UseCase\Usuario\RegistrarUsuario:
+        arguments:
+            $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
+
+    Core\UseCase\Usuario\VisualizarUsuario:
+        arguments:
+            $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
+        
