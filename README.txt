@@ -29,7 +29,14 @@ adicionar o swagger,
 
 
 
-| **usuarios**                           | `id`, `cpf`, `nome`, `nome_usuario`, `telefone`, `email`, `senha`, `grupo`, `criado_em`           
+| **usuarios**                           | `id`, `cpf`, `nome`, `nome_usuario`, `telefone`, `email`, `senha`, `grupo`, `criado_em` |
+
+Features:
+    Cadastrar Usuario:{`cpf`,`nome`, `nome_usuario`, `telefone`, `email`, `senha`}
+    Vizualizar Usuario:{ID}
+    Logar Usuario: {`email`, `senha`}
+
+
 
 | **empresas**                           | `id`, `nome`, `logo_url`, `site`, `criado_em`                                                     
 

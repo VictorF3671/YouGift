@@ -12,14 +12,8 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    Core\Domain\Usuario\Repository\IUsuarioRepository: '@App\Repository\UsuarioRepository'
-    
-
-    Core\UseCase\Usuario\RegistrarUsuario:
-        arguments:
-            $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
-
-    Core\UseCase\Usuario\VisualizarUsuario:
-        arguments:
-            $usuarioRepository: '@Core\Domain\Usuario\Repository\IUsuarioRepository'
-        
+    Core\:
+        resource: '../core/*'
+        exclude: '../core/{Entity,Migrations,Tests}'
+        autowire: true
+        autoconfigure: true
