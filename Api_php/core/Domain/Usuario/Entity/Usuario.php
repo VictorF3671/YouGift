@@ -3,6 +3,7 @@
 namespace Core\Domain\Usuario\Entity;
 
 use Core\Domain\Usuario\Enum\TipoUsuario;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class Usuario
 {

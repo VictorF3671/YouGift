@@ -2,6 +2,7 @@
 
 namespace Core\Domain\Usuario\Repository;
 
+use App\Entity\Usuario as EntityUsuario;
 use Core\Domain\Usuario\Entity\Usuario;
 
 interface IUsuarioRepository
@@ -13,6 +14,8 @@ interface IUsuarioRepository
     public function buscarPorUsername(string $username): ?Usuario;
 
     public function buscarPorEmail(string $email): ?Usuario;
+
+    public function buscarPorOrmEmail(string $email): ?EntityUsuario;
 
     public function buscarPorCpf(string $cpf): ?Usuario;
 

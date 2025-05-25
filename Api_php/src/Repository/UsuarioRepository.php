@@ -15,10 +15,10 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
 
     private EntityManagerInterface $em;
 
-    public function __construct(ManagerRegistry $registry,EntityManagerInterface $em)
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $em)
     {
         parent::__construct($registry, Usuario::class);
-        $this->em=$em;
+        $this->em = $em;
     }
 
     public function salvar(UsuarioDomain $usuario): UsuarioDomain
@@ -49,6 +49,11 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
     {
         $orm = $this->findOneBy(['email' => $email]);
         return $orm ? $this->mapearParaDominio($orm) : null;
+    }
+
+    public function buscarPorOrmEmail(string $email): ?Usuario
+    {
+        return $this->findOneBy(['email' => $email]);
     }
 
     public function buscarPorCpf(string $cpf): ?UsuarioDomain
