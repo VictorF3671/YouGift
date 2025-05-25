@@ -16,7 +16,6 @@ class RegistrarUsuario
     {
         $cpf = $dados['cpf'];
         $email = $dados['email'];
-        $nomeUsuario = $dados['nome_usuario'];
         
         if ($this->usuarioRepository->buscarPorCpf($cpf)) {
             throw new \DomainException("CPF já está em uso.");
@@ -25,11 +24,6 @@ class RegistrarUsuario
         if ($this->usuarioRepository->buscarPorEmail($email)) {
             throw new \DomainException("Email já está em uso.");
         }
-
-        if ($this->usuarioRepository->buscarPorUsername($nomeUsuario)) {
-            throw new \DomainException("Nome já está em uso.");
-        }
-        
         
         $senhaHash = password_hash($dados['senha'], PASSWORD_BCRYPT);
 
@@ -37,7 +31,6 @@ class RegistrarUsuario
             id: null,
             cpf: $cpf,
             nome: $dados['nome'],
-            nomeUsuario: $nomeUsuario,
             email: $email,
             telefone: $dados['telefone'] ?? '',
             senha: $senhaHash,

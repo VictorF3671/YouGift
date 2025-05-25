@@ -26,7 +26,6 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
         $orm = new Usuario();
         $orm->cpf = $usuario->getCpf();
         $orm->nome = $usuario->getNome();
-        $orm->nomeUsuario = $usuario->getNomeUsuario();
         $orm->email = $usuario->getEmail();
         $orm->telefone = $usuario->getTelefone();
         $orm->senha = $usuario->getSenha();
@@ -93,7 +92,6 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
             id: $orm->id,
             cpf: $orm->cpf,
             nome: $orm->nome,
-            nomeUsuario: $orm->nomeUsuario,
             email: $orm->email,
             telefone: $orm->telefone,
             senha: $orm->senha,

@@ -20,9 +20,6 @@ class Usuario implements UserInterface
     #[ORM\Column(type: "string")]
     public string $nome;
 
-    #[ORM\Column(name: "nome_usuario", type: "string", unique: true)]
-    public string $nomeUsuario;
-
     #[ORM\Column(type: "string", unique: true)]
     public string $email;
 

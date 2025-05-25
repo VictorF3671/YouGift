@@ -11,7 +11,6 @@ class Usuario
         private ?int $id,
         private string $cpf,
         private string $nome,
-        private string $nomeUsuario,
         private string $email,
         private string $telefone,
         private string $senha,
@@ -32,11 +31,6 @@ class Usuario
     public function getNome(): string
     {
         return $this->nome;
-    }
-
-    public function getNomeUsuario(): string
-    {
-        return $this->nomeUsuario;
     }
 
     public function getEmail(): string
