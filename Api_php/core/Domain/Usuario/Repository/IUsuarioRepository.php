@@ -11,8 +11,6 @@ interface IUsuarioRepository
 
     public function buscarPorId(int $id): ?Usuario;
 
-    public function buscarPorUsername(string $username): ?Usuario;
-
     public function buscarPorEmail(string $email): ?Usuario;
 
     public function buscarPorOrmEmail(string $email): ?EntityUsuario;

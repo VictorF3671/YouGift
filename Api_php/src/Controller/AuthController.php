@@ -17,7 +17,6 @@ class AuthController extends AbstractController
     public function __construct(
         private readonly AutenticarUsuario $autenticarUsuario,
         private RegistrarUsuario $registrarUsuario,
-        private VisualizarUsuario $visualizarUsuario
     ) {}
 
     #[Route('/registrar-usuario', methods: ['POST'])]

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -33,10 +34,10 @@ class Usuario implements UserInterface
     public int $tipo;
 
     #[ORM\Column(name: "criado_em", type: "datetime_immutable")]
-    public \DateTimeImmutable $criadoEm;
+    public DateTimeImmutable $criadoEm;
 
     public function getUserIdentifier(): string { return $this->email; }
     public function getPassword(): string { return $this->senha; }
-    public function getRoles(): array { return ['ROLE_USER']; }
+    public function getRoles(): array { return ['cliente']; }
     public function eraseCredentials(): void {}
 }

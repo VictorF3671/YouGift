@@ -3,7 +3,7 @@
 namespace Core\Domain\Usuario\Entity;
 
 use Core\Domain\Usuario\Enum\TipoUsuario;
-use Symfony\Component\Security\Core\User\UserInterface;
+use DateTimeImmutable;
 
 class Usuario
 {
@@ -15,7 +15,7 @@ class Usuario
         private string $telefone,
         private string $senha,
         private TipoUsuario $tipo,
-        private \DateTimeImmutable $criadoEm = new \DateTimeImmutable()
+        private DateTimeImmutable $criadoEm = new DateTimeImmutable()
     ) {}
 
     public function getId(): ?int
@@ -56,5 +56,26 @@ class Usuario
     public function getCriadoEm(): \DateTimeImmutable
     {
         return $this->criadoEm;
+    }
+
+    public function setNome(string $nome): void
+    {
+        $this->$nome = $nome;
+    }
+    public function setEmail(string $email): void
+    {
+        $this->$email = $email;
+    }
+    public function setCpf(string $cpf): void
+    {
+        $this->$cpf = $cpf;
+    }
+    public function setTelefone(string $nome): void
+    {
+        $this->$nome = $nome;
+    }
+    public function setTipo(TipoUsuario $tipo): void
+    {
+        $this->$tipo = $tipo;
     }
 }

@@ -2,25 +2,23 @@
 
 namespace Core\UseCase\Usuario;
 
-use Core\Domain\Usuario\Entity\Usuario;
 use Core\Domain\Usuario\Repository\IUsuarioRepository;
 use DomainException;
 
-class VisualizarUsuario
+class RemoverUsuario
 {
     public function __construct(
         private IUsuarioRepository $usuarioRepository
-        ) 
-    {}
+    ) {}
 
-    public function executar(int $id) : Usuario {
+    public function executar(int $id): void
+    {
         $usuario = $this->usuarioRepository->buscarPorId($id);
 
-        if(!$usuario)
-        {
+        if (!$usuario) {
             throw new DomainException('Usuário não encontrado.');
-        } 
+        }
 
-        return $usuario;
+        $this->usuarioRepository->remover($id);
     }
 }

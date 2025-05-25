@@ -2,8 +2,8 @@
 
 namespace App\Repository;
 
-use App\Entity\Usuario;
-use Core\Domain\Usuario\Entity\Usuario as UsuarioDomain;
+use App\Entity\Usuario as EntityUsuario;
+use Core\Domain\Usuario\Entity\Usuario;
 use Core\Domain\Usuario\Enum\TipoUsuario;
 use Core\Domain\Usuario\Repository\IUsuarioRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -17,13 +17,13 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
 
     public function __construct(ManagerRegistry $registry, EntityManagerInterface $em)
     {
-        parent::__construct($registry, Usuario::class);
+        parent::__construct($registry, EntityUsuario::class);
         $this->em = $em;
     }
 
-    public function salvar(UsuarioDomain $usuario): UsuarioDomain
+    public function salvar(Usuario $usuario): Usuario
     {
-        $orm = new Usuario();
+        $orm = new EntityUsuario();
         $orm->cpf = $usuario->getCpf();
         $orm->nome = $usuario->getNome();
         $orm->email = $usuario->getEmail();
@@ -38,40 +38,33 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
         return $this->mapearParaDominio($orm);
     }
 
-    public function buscarPorId(int $id): ?UsuarioDomain
+    public function buscarPorId(int $id): ?Usuario
     {
         $orm = $this->find($id);
         return $orm ? $this->mapearParaDominio($orm) : null;
     }
 
-    public function buscarPorEmail(string $email): ?UsuarioDomain
+    public function buscarPorEmail(string $email): ?Usuario
     {
         $orm = $this->findOneBy(['email' => $email]);
         return $orm ? $this->mapearParaDominio($orm) : null;
     }
 
-    public function buscarPorOrmEmail(string $email): ?Usuario
+    public function buscarPorOrmEmail(string $email): ?EntityUsuario
     {
         return $this->findOneBy(['email' => $email]);
     }
 
-    public function buscarPorCpf(string $cpf): ?UsuarioDomain
+    public function buscarPorCpf(string $cpf): ?Usuario
     {
         $orm = $this->findOneBy(['cpf' => $cpf]);
         return $orm ? $this->mapearParaDominio($orm) : null;
     }
 
-    public function buscarPorUsername(string $username): ?UsuarioDomain
-    {
-        $orm = $this->findOneBy(['nomeUsuario' => $username]);
-        return $orm ? $this->mapearParaDominio($orm) : null;
-    }
-
-
     public function listarTodos(): array
     {
         return array_map(
-            [$this, 'mapearParaDominio'],
+            fn($usuario) => $this->mapearParaDominio($usuario),
             $this->findAll()
         );
     }
@@ -86,9 +79,9 @@ class UsuarioRepository extends ServiceEntityRepository implements IUsuarioRepos
     }
 
 
-    private function mapearParaDominio(Usuario $orm): UsuarioDomain
+    private function mapearParaDominio(EntityUsuario $orm): Usuario
     {
-        return new UsuarioDomain(
+        return new Usuario(
             id: $orm->id,
             cpf: $orm->cpf,
             nome: $orm->nome,

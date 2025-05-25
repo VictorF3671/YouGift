@@ -14,6 +14,7 @@ class RegistrarUsuario
 
     public function executar(array $dados): Usuario
     {
+
         $cpf = $dados['cpf'];
         $email = $dados['email'];
         
@@ -34,7 +35,7 @@ class RegistrarUsuario
             email: $email,
             telefone: $dados['telefone'] ?? '',
             senha: $senhaHash,
-            tipo: TipoUsuario::CLIENTE, 
+            tipo: isset($dados['tipo']) ? TipoUsuario::from($dados['tipo']) : TipoUsuario::CLIENTE, 
         );
 
         return $this->usuarioRepository->salvar($usuario);
