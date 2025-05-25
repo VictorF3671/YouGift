@@ -6,8 +6,12 @@
 
 <ion-content class="ion-padding">
   <div style="display: flex; justify-content: flex-end; margin-bottom: 16px;">
+    <ion-button (click)="irCadastrarValor()">
+      <ion-icon slot="start" color="warning" name="add-outline"></ion-icon>
+      Cadastrar Valor
+    </ion-button>
     <ion-button (click)="irCadastrarGift()">
-      <ion-icon slot="start" name="add-outline"></ion-icon>
+      <ion-icon slot="start"  name="add-outline"></ion-icon>
       Cadastrar Novo Gift
     </ion-button>
   </div>
@@ -25,12 +29,12 @@
 
     <ion-row *ngFor="let gift of giftcards">
       <ion-col size="1">{{ gift.id }}</ion-col>
-      <ion-col size="2">{{ gift.nome }}</ion-col>
-      <ion-col size="2">{{ gift.descricao }}</ion-col>
+      <ion-col size="2">{{ gift.name }}</ion-col>
+      <ion-col size="2">{{ gift.desc }}</ion-col>
       <ion-col size="3">
         <img [src]="gift.imagem" alt="Imagem" style="width: 100px; height: auto;" />
       </ion-col>
-      <ion-col size="2">{{ gift.empresa }}</ion-col>
+      <ion-col size="2">{{ gift.company }}</ion-col>
       <ion-col size="2">{{ gift.createdAt | date: 'short' }}</ion-col>
       <ion-col size="1">
         <ion-button color="danger" fill="clear" (click)="excluirGift(gift.id)">

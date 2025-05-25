@@ -17,19 +17,52 @@ export class CadastrarValorPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
   mostrarErro = false;
   mensagemErro = '';
-  constructor(private router: Router, private axiosContext: AxiosContextService) { }
+
+  companies: any[] = [];
+  empresaSelecionada: string = '';
+  precos: number[] = [0]; // inicia com 1 input de preço
+
+  constructor(private router: Router, private axiosContext: AxiosContextService) {}
 
   ngOnInit() {
+    this.carregarEmpresas();
   }
 
-  async carregarCompanys(){
-
+  async carregarEmpresas() {
+    try {
+      const response = await this.axios.get('/giftcards');
+      this.companies = response.data;
+    } catch (error) {
+      console.error('Erro ao carregar empresas', error);
+    }
   }
+
+  adicionarPreco() {
+    this.precos.push(0);
+  }
+
+  async cadastrarValores() {
+    try {
+      for (const preco of this.precos) {
+        await this.axios.post('/giftcard-values/', {
+          gift_card: this.empresaSelecionada,
+          value: preco
+        });
+      }
+      console.log('Valores cadastrados com sucesso!');
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.error('Erro ao cadastrar valores:', error);
+      this.mostrarErro = true;
+      this.mensagemErro = 'Erro ao cadastrar os valores. Verifique os dados e tente novamente.';
+    }
+  }
+
   navegarHome() {
     this.router.navigate(['/home']);
   }
 
-  fecharErro(){
+  fecharErro() {
     this.mostrarErro = false;
   }
 }
