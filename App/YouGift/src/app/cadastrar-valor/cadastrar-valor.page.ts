@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { AxiosContextService } from 'src/server/axiosContext.server';
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
 
+
 @Component({
   selector: 'app-cadastrar-valor',
   templateUrl: './cadastrar-valor.page.html',
@@ -20,9 +21,11 @@ export class CadastrarValorPage implements OnInit {
 
   companies: any[] = [];
   empresaSelecionada: string = '';
-  precos: number[] = [0]; // inicia com 1 input de preço
+  precos: number[] = [0]; 
 
-  constructor(private router: Router, private axiosContext: AxiosContextService) {}
+  constructor(private router: Router, private axiosContext: AxiosContextService) {
+
+  }
 
   ngOnInit() {
     this.carregarEmpresas();
@@ -59,7 +62,7 @@ export class CadastrarValorPage implements OnInit {
   }
 
   navegarHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/gifts-cadastrados']);
   }
 
   fecharErro() {

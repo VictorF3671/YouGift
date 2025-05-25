@@ -5,38 +5,46 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div style="display: flex; justify-content: flex-end; margin-bottom: 16px;">
-    <ion-button (click)="irCadastrarValor()">
-      <ion-icon slot="start" color="warning" name="add-outline"></ion-icon>
+  
+  <div class="button-container">
+    <ion-breadcrumbs>
+  <ion-breadcrumb href="/home">
+    <ion-icon slot="start" name="home"></ion-icon>
+    Home
+  </ion-breadcrumb>
+  <ion-breadcrumb href="/gifts-cadastrados">
+    <ion-icon slot="start" name="id-card"></ion-icon>
+    Gifts Cadastrados
+  </ion-breadcrumb>
+</ion-breadcrumbs>
+
+    <ion-button (click)="irCadastrarValor()" color="warning" fill="solid">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
       Cadastrar Valor
     </ion-button>
-    <ion-button (click)="irCadastrarGift()">
-      <ion-icon slot="start"  name="add-outline"></ion-icon>
+    <ion-button (click)="irCadastrarGift()" color="primary" fill="solid">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
       Cadastrar Novo Gift
     </ion-button>
   </div>
 
-  <ion-grid>
-    <ion-row class="table-header" style="font-weight: bold;">
+  <ion-grid class="custom-table">
+    <ion-row class="table-header">
       <ion-col size="1">ID</ion-col>
       <ion-col size="2">Nome</ion-col>
-      <ion-col size="2">Descrição</ion-col>
-      <ion-col size="3">Imagem</ion-col>
+      <ion-col size="3">Descrição</ion-col>
       <ion-col size="2">Empresa</ion-col>
       <ion-col size="2">Criado em</ion-col>
-      <ion-col size="1">Ações</ion-col>
+      <ion-col size="2" class="text-center">Ações</ion-col>
     </ion-row>
 
-    <ion-row *ngFor="let gift of giftcards">
+    <ion-row *ngFor="let gift of giftcards" class="table-row">
       <ion-col size="1">{{ gift.id }}</ion-col>
       <ion-col size="2">{{ gift.name }}</ion-col>
-      <ion-col size="2">{{ gift.desc }}</ion-col>
-      <ion-col size="3">
-        <img [src]="gift.imagem" alt="Imagem" style="width: 100px; height: auto;" />
-      </ion-col>
+      <ion-col size="3">{{ gift.desc }}</ion-col>
       <ion-col size="2">{{ gift.company }}</ion-col>
       <ion-col size="2">{{ gift.createdAt | date: 'short' }}</ion-col>
-      <ion-col size="1">
+      <ion-col size="2" class="text-center">
         <ion-button color="danger" fill="clear" (click)="excluirGift(gift.id)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
