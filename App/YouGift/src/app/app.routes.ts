@@ -47,5 +47,9 @@ export const routes: Routes = [
     path: 'cadastrar-valor',
     loadComponent: () => import('./cadastrar-valor/cadastrar-valor.page').then( m => m.CadastrarValorPage)
   },
+  {
+    path: 'usuarios-cadastrados',
+    loadComponent: () => import('./usuarios-cadastrados/usuarios-cadastrados.page').then( m => m.UsuariosCadastradosPage)
+  },
 
 ];

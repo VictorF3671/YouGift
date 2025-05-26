@@ -1,4 +1,5 @@
 export interface IUsuario{
+    id: number;
     cpf: string;
     fullname: string;
     email: string;

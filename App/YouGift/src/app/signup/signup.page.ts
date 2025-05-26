@@ -16,7 +16,7 @@ import { AxiosContextService } from 'src/server/axiosContext.server';
 })
 export class SignupPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
-  user: IUsuario = { cpf: '', fullname: '', email:'', password: '', phone_number: '', group: 2 };
+  user: IUsuario = {id: 0 , cpf: '', fullname: '', email:'', password: '', phone_number: '', group: 2 };
   mostrarErro = false;
   mensagemErro = '';
   constructor(private router: Router, private axiosContext: AxiosContextService) { }
