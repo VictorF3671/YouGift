@@ -64,7 +64,7 @@ export class HomePage implements OnInit{
 
   irUsuarios() {
     this.mostrarMenu = false;
-    this.router.navigate(['/usuarios']);
+    this.router.navigate(['/usuarios-cadastrados']);
   }
 
   irGiftsCadastrados() {

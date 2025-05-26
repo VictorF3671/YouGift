@@ -22,7 +22,7 @@ export class TelaCompraPage {
   image_url: '',
   company: ''
 };
-values_gifts: any = {};
+values_gifts: any[] = [];
 
   valorSelecionado = 50;
   quantity = 1;
@@ -69,12 +69,12 @@ async carregarValues(id:number){
     if (this.quantity > 1) this.quantity--;
   }
 
-  adicionarCarrinho() {
-    console.log('Adicionado ao Carrinho:', this.gift.name, this.valorSelecionado, this.quantity);
-    //usar TOAST 
-  }
-
+  //quantidade
+  //id Value
+  //Value para fazer o calculo
+  //id do gift
   buyNow() {
+
     console.log('Comprando:', this.gift.name, this.valorSelecionado, this.quantity);
     this.routerN.navigate(['/tela-pagamento']);
   }
