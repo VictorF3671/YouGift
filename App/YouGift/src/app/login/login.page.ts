@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
      }
     try{
       console.log(this.user)
-      const response = await this.axios.post('/login/', this.user)
+      const response = await this.axios.post('/auth/login', this.user)
      
       if(response.data.token){
         const token = response.data.token

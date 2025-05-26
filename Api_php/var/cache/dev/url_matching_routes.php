@@ -10,7 +10,8 @@ return [
     [ // $staticRoutes
         '/api/v1' => [[['_route' => 'app.swagger_ui', '_controller' => 'nelmio_api_doc.controller.swagger_ui', 'require_auth' => false], null, ['GET' => 0], null, false, false, null]],
         '/api/v1/doc.json' => [[['_route' => 'app.swagger', '_controller' => 'nelmio_api_doc.controller.swagger', 'require_auth' => false], null, ['GET' => 0], null, false, false, null]],
-        '/user/registrar-usuario' => [[['_route' => 'app_usuario_register', '_controller' => 'App\\Controller\\UsuarioController::register'], null, ['POST' => 0], null, false, false, null]],
+        '/auth/registrar-usuario' => [[['_route' => 'app_auth_register', '_controller' => 'App\\Controller\\AuthController::register'], null, ['POST' => 0], null, false, false, null]],
+        '/auth/login' => [[['_route' => 'app_auth_login', '_controller' => 'App\\Controller\\AuthController::login'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -30,6 +31,7 @@ return [
                     .')'
                 .')'
                 .'|/_error/(\\d+)(?:\\.([^/]++))?(*:296)'
+                .'|/user/visualizar/([^/]++)(*:329)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -44,8 +46,9 @@ return [
             [['_route' => '_api_validation_errors_hydra', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_hydra', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_jsonapi', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_jsonapi', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
         ],
-        296 => [
-            [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
+        296 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        329 => [
+            [['_route' => 'visualizar_usuario', '_controller' => 'App\\Controller\\UsuarioController::viewUser'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

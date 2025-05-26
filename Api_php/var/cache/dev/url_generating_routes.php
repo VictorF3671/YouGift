@@ -15,6 +15,10 @@ return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     'app.swagger_ui' => [[], ['_controller' => 'nelmio_api_doc.controller.swagger_ui', 'require_auth' => false], [], [['text', '/api/v1']], [], [], []],
     'app.swagger' => [[], ['_controller' => 'nelmio_api_doc.controller.swagger', 'require_auth' => false], [], [['text', '/api/v1/doc.json']], [], [], []],
-    'app_usuario_register' => [[], ['_controller' => 'App\\Controller\\UsuarioController::register'], [], [['text', '/user/registrar-usuario']], [], [], []],
-    'App\Controller\UsuarioController::register' => [[], ['_controller' => 'App\\Controller\\UsuarioController::register'], [], [['text', '/user/registrar-usuario']], [], [], []],
+    'app_auth_register' => [[], ['_controller' => 'App\\Controller\\AuthController::register'], [], [['text', '/auth/registrar-usuario']], [], [], []],
+    'app_auth_login' => [[], ['_controller' => 'App\\Controller\\AuthController::login'], [], [['text', '/auth/login']], [], [], []],
+    'visualizar_usuario' => [['id'], ['_controller' => 'App\\Controller\\UsuarioController::viewUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/visualizar']], [], [], []],
+    'App\Controller\AuthController::register' => [[], ['_controller' => 'App\\Controller\\AuthController::register'], [], [['text', '/auth/registrar-usuario']], [], [], []],
+    'App\Controller\AuthController::login' => [[], ['_controller' => 'App\\Controller\\AuthController::login'], [], [['text', '/auth/login']], [], [], []],
+    'App\Controller\UsuarioController::viewUser' => [['id'], ['_controller' => 'App\\Controller\\UsuarioController::viewUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/visualizar']], [], [], []],
 ];
