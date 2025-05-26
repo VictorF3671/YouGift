@@ -52,7 +52,7 @@ export class CadastrarValorPage implements OnInit {
           value: preco
         });
       }
-      console.log('Valores cadastrados com sucesso!');
+      
       this.router.navigate(['/home']);
     } catch (error) {
       console.error('Erro ao cadastrar valores:', error);

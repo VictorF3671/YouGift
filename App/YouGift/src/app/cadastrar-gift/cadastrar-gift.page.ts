@@ -50,7 +50,7 @@ export class CadastrarGiftPage {
   }
   navegarHome() {
     // Aqui você pode redirecionar para a home ou outra página
-    this.router.navigate(['/home']);
+    this.router.navigate(['/gifts-cadastrados']);
   }
 
   cadastrarGift() {
