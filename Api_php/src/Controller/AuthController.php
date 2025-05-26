@@ -5,13 +5,12 @@ namespace App\Controller;
 use Core\UseCase\Usuario\AutenticarUsuario;
 use Core\UseCase\Usuario\DTO\LoginInputDto;
 use Core\UseCase\Usuario\RegistrarUsuario;
-use Core\UseCase\Usuario\VisualizarUsuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/auth')]
+#[Route('/api/auth')]
 class AuthController extends AbstractController
 {
     public function __construct(

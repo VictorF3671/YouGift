@@ -3,24 +3,26 @@
 namespace Core\UseCase\Usuario;
 
 use App\Infra\JwtTokenService;
-use Core\Domain\Usuario\Repository\IUsuarioRepository;
+use App\Repository\AuthUsuarioRepository;
+use App\Repository\UsuarioRepository;
 use Core\UseCase\Usuario\DTO\LoginInputDto;
 use Exception;
 
 class AutenticarUsuario
 {
     public function __construct(
-        private IUsuarioRepository $usuarioRepository,
+        private AuthUsuarioRepository $usuarioRepositoryOrm,
         private JwtTokenService $jwtService
     ) {}
 
     public function executar(LoginInputDto $input): string
     {
-        $usuario = $this->usuarioRepository->buscarPorOrmEmail($input->email);
-        if (!$usuario || !password_verify($input->senha, $usuario->getPassword())) {
-            throw new Exception("Credenciais inválidas.");
+        $usuarioOrm = $this->usuarioRepositoryOrm->loadUserByIdentifier($input->email);
+
+        if (!$usuarioOrm) {
+            throw new Exception("Usuário não encontrado.");
         }
 
-        return $this->jwtService->gerarToken($usuario);
+        return $this->jwtService->gerarToken($usuarioOrm);
     }
 }

@@ -8,15 +8,17 @@ use Core\UseCase\Usuario\RemoverUsuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[Route('/usuario')]
+#[Route('/api/usuario')]
 class UsuarioController extends AbstractController
 {
     public function __construct(
         private AtualizarUsuario $atualizarUsuario,
-        private RemoverUsuario $removerUsuario
+        private RemoverUsuario $removerUsuario,
+        private IUsuarioRepository $usuarioRepository
     ) {}
 
     #[Route('/listar', name: 'visualizar_usuario', methods: ['GET'])]
@@ -40,10 +42,10 @@ class UsuarioController extends AbstractController
     }
 
     #[Route('/listar-todos', name: 'visualizar_todos_usuario', methods: ['GET'])]
-    public function viewUserAll(IUsuarioRepository $repo): JsonResponse
+    #[IsGranted('ROLE_ADMIN')]
+    public function viewUserAll(): JsonResponse
     {
-        $usuarios = $repo->listarTodos();
-
+        $usuarios = $this->usuarioRepository->listarTodos();
         $dados = array_map(fn($usuario) => [
             'id' => $usuario->getId(),
             'cpf' => $usuario->getCpf(),
@@ -55,30 +57,6 @@ class UsuarioController extends AbstractController
         ], $usuarios);
 
         return new JsonResponse($dados);
-    }
-
-    #[Route('/atualizar/{id}', name: 'atualizar_usuario', methods: ['PUT'])]
-    #[IsGranted('ROLE_ADMIN')]
-    public function atualizar(int $id, Request $request): JsonResponse
-    {
-        $dados = json_decode($request->getContent(), true);
-        $dados['id'] = $id;
-
-        try {
-            $usuario = $this->atualizarUsuario->executar($dados);
-
-            return new JsonResponse([
-                'mensagem' => 'Usuário atualizado com sucesso',
-                'usuario' => [
-                    'id' => $usuario->getId(),
-                    'nome' => $usuario->getNome(),
-                    'email' => $usuario->getEmail(),
-                    'cpf' => $usuario->getCpf(),
-                ]
-            ]);
-        } catch (\DomainException $e) {
-            return new JsonResponse(['erro' => $e->getMessage()], 400);
-        }
     }
 
     #[Route('/remover/{id}', name: 'remover_usuario', methods: ['DELETE'])]
