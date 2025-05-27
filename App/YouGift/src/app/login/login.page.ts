@@ -18,7 +18,7 @@ import axios from 'axios';
 })
 export class LoginPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
-  user: IUserLogin = {email:'',password:''}
+  user: IUserLogin = {email:'',senha:''}
   mostrarErro = false;
   mensagemErro = '';
   
@@ -32,7 +32,7 @@ export class LoginPage implements OnInit {
 
   async verifyLogin(){
      console.log("entrei")
-       if (!this.user.email || !this.user.password) {
+       if (!this.user.email || !this.user.senha) {
         this.mensagemErro = "Preencha todos os campos corretamente";
         this.mostrarErro = true;
         return;
@@ -40,14 +40,12 @@ export class LoginPage implements OnInit {
      }
     try{
       console.log(this.user)
-      const response = await this.axios.post('/login/', this.user)
+      console.log(this.user)
+      const response = await this.axios.post('http://localhost:8000/api/auth/login', this.user)
      
       if(response.data.token){
         const token = response.data.token
         localStorage.setItem('token', token)
-        localStorage.setItem('group', 'admin' )
-        // const group = response.data.group
-        // localStorage.setItem('group', group.toString())
         this.router.navigate(['/home'])
       }
     }catch (error: any) {

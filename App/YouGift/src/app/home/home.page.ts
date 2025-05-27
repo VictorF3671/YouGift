@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { AxiosContextService } from 'src/server/axiosContext.server';
+import { IGiftCard } from './IGiftCardHome';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,58 +13,31 @@ import { Router } from '@angular/router'
 })
 
 export class HomePage implements OnInit{
-  constructor(private router: Router) { }
+  constructor(private router: Router,  private axiosContext: AxiosContextService) { }
+  private axios = this.axiosContext.getAxiosInstance();
   mostrarMenu = false;
   eventoDoBotao: any;
   isAdmin = false;
-  giftcards = [
-    {
-      nome: 'Netflix',
-      descricao: 'Assista filmes e séries',
-      imagem: './assets/netflix.png'
-    },
-    {
-      nome: 'Spotify',
-      descricao: 'Música ilimitada',
-      imagem: './assets/spotify.png'
-    },
-    {
-      nome: 'Free Fire',
-      descricao: 'Diamantes para suas batalhas',
-      imagem: './assets/freefire.png'
-    },
-    {
-      nome: 'Roblox',
-      descricao: 'Robux para customizar seu avatar',
-      imagem: './assets/roblox.png'
-    },
-    {
-      nome: 'Amazon',
-      descricao: 'Compre tudo o que quiser',
-      imagem: './assets/amazon.png'
-    }
-  ];
+  giftcards: IGiftCard[] = [];
 
   ngOnInit() {
   const role = localStorage.getItem('group'); 
   console.log(role)
   this.isAdmin = role === 'admin';
+  this.carregarGifts()
   }
-  
 
-  slideOpts = {
-    slidesPerView: 2.2,
-    spaceBetween: 10
-  };
+  async carregarGifts(){
+    const response = await this.axios.get('/giftcards')
+    this.giftcards = response.data;
+  }
 
   irCadastro() {
-
     this.router.navigate(['/cadastrar-gift']);
   }
 
   abrirDetalhe(gift: any) {
-
-    this.router.navigate(['/tela-compra', gift.nome]);
+    this.router.navigate(['/tela-compra', gift.id]);
   }
 
   filtrar(event: any) {
@@ -89,7 +64,7 @@ export class HomePage implements OnInit{
 
   irUsuarios() {
     this.mostrarMenu = false;
-    this.router.navigate(['/usuarios']);
+    this.router.navigate(['/usuarios-cadastrados']);
   }
 
   irGiftsCadastrados() {

@@ -13,9 +13,9 @@
       </ion-searchbar>
 
       
-        <ion-button (click)="abrirMenu($event)">Opções
-  <!-- <ion-icon slot="icon-only" name="home" color="primary"></ion-icon> -->
-</ion-button>
+      <ion-button (click)="abrirMenu($event)">
+        <ion-icon slot="icon-only" name="person-circle-outline" color="warning"></ion-icon> 
+      </ion-button>
 
 <ion-popover
   [isOpen]="mostrarMenu"
@@ -42,12 +42,12 @@
     <div class="carousel-container">
       <div class="carousel" >
         <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
-          <img [src]="gift.imagem" />
+          <img [src]="gift.image_url" />
           <ion-card-header>
-            <ion-card-title>{{ gift.nome }}</ion-card-title>
+            <ion-card-title>{{ gift.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ gift.descricao }}
+            {{ gift.desc }}
           </ion-card-content>
         </ion-card>
       </div>
@@ -58,12 +58,12 @@
     <div class="carousel-container">
       <div class="carousel" >
         <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
-          <img [src]="gift.imagem" />
+          <img [src]="gift.image_url" />
           <ion-card-header>
-            <ion-card-title>{{ gift.nome }}</ion-card-title>
+            <ion-card-title>{{ gift.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ gift.descricao }}
+            {{ gift.desc }}
           </ion-card-content>
         </ion-card>
       </div>

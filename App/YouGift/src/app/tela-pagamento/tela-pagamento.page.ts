@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
 import { Router } from '@angular/router';
+import { CompraService } from '../services/compra.service';
 
 @Component({
   selector: 'app-tela-pagamento',
@@ -15,11 +16,14 @@ import { Router } from '@angular/router';
 export class TelaPagamentoPage implements OnInit {
    mostrarErro = false;
   mensagemErro = '';
-  constructor(private router: Router) { }
+  constructor(private router: Router, private compraContext: CompraService) { }
 
   ngOnInit() {
+    const compra = this.compraContext.getCompra();
+  if (compra) {
+    console.log('Dados da compra:', compra);
   }
- 
+}
 
 metodoSelecionado: string = 'cartao';
 cartao = {

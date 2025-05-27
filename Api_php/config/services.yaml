@@ -1,0 +1,19 @@
+parameters:
+
+services:
+    _defaults:
+        autowire: true      
+        autoconfigure: true 
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    Core\:
+        resource: '../core/*'
+        exclude: '../core/{Entity,Migrations,Tests}'
+        autowire: true
+        autoconfigure: true

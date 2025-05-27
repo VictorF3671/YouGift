@@ -20,11 +20,13 @@ export class GiftsCadastradosPage implements OnInit {
     this.carregarGifts();
   }
 
-  carregarGifts() {
-    // const response = this.axios.get('/giftcards')
-    // this.giftcards = response
-
-    
+  async carregarGifts() {
+    const response =  await this.axios.get('/giftcards')
+    this.giftcards = response.data     
+  }
+  
+  irCadastrarValor() {
+    this.router.navigate(['/cadastrar-valor']);
   }
 
   irCadastrarGift() {

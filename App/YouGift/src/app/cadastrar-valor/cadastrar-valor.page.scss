@@ -1,0 +1,31 @@
+.login-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.login-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+ .container-button{
+  display: flex;
+  justify-content: end;
+}
+.button-custom{
+    margin-bottom: 10px;
+}
+
+.item-custom{
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}

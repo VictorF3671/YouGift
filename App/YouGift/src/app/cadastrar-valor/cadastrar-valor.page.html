@@ -1,0 +1,48 @@
+<ycard-error
+    [message]="mensagemErro"
+    [type]="'error'"
+    [visible]="mostrarErro"
+    (onClose)="fecharErro()">
+  </ycard-error>
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content class="ion-padding">
+  <div class="login-background"> 
+    <div class="login-card"> 
+      <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
+
+     <ion-list>
+  <ion-item>
+    <ion-label position="stacked">
+      Empresa <ion-text color="danger">(Obrigatório)</ion-text>
+    </ion-label>
+    <ion-select [(ngModel)]="empresaSelecionada" placeholder="Selecione a Empresa">
+      <ion-select-option *ngFor="let gift of companies" [value]="gift.id">
+        {{ gift.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<div *ngFor="let preco of precos; let i = index">
+  <ion-item lines="none">
+    <ion-label position="floating">Preço {{ i + 1 }}</ion-label>
+    <ion-input type="number" [(ngModel)]="precos[i]"></ion-input>
+  </ion-item>
+</div>
+
+<div class="ion-text-center">
+  <ion-button fill="outline" color="primary" (click)="adicionarPreco()">Adicionar Preço</ion-button>
+</div>
+
+<div class="container-button">
+  <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Voltar</ion-button>
+  <ion-button expand="block" color="success" (click)="cadastrarValores()">Cadastrar</ion-button>
+</div>
+    </div>
+    </div>
+</ion-content> 
