@@ -22,10 +22,10 @@ test = Adição ou alteração de testes
 chore = Tarefas que não afetam o código de produção (ex: configs, builds)
 
 Api_PHP
+criar as novas tabelas,
+criar os novos controllers,
+adicionar o crud na interface do giftcard,
 
-Implementar a logica existente do Django,
-adicionar as novas funcionalidades,
-adicionar o swagger,
 
 
 
