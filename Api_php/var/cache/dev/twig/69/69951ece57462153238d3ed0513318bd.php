@@ -326,6 +326,6 @@ class __TwigTemplate_1219bcf8791cdf4fa3bc2077d4f9d946 extends Template
     {% endblock swagger_initialization %}
 </body>
 </html>
-", "@NelmioApiDoc/Redocly/index.html.twig", "C:\\Users\\adria\\source\\repos\\projetos\\ionic\\Webgift-mobile\\Api_php\\vendor\\nelmio\\api-doc-bundle\\templates\\Redocly\\index.html.twig");
+", "@NelmioApiDoc/Redocly/index.html.twig", "C:\\Users\\victo\\MeusProjetos\\Webgift-mobile\\Api_php\\vendor\\nelmio\\api-doc-bundle\\templates\\Redocly\\index.html.twig");
     }
 }

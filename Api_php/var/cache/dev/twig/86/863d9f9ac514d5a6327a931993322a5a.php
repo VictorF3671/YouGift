@@ -270,6 +270,6 @@ class __TwigTemplate_0ec640d89b232bdca4e9066b1edd9dde extends Template
     {% endblock swagger_initialization %}
 </body>
 </html>
-", "@NelmioApiDoc/Stoplight/index.html.twig", "C:\\Users\\adria\\source\\repos\\projetos\\ionic\\Webgift-mobile\\Api_php\\vendor\\nelmio\\api-doc-bundle\\templates\\Stoplight\\index.html.twig");
+", "@NelmioApiDoc/Stoplight/index.html.twig", "C:\\Users\\victo\\MeusProjetos\\Webgift-mobile\\Api_php\\vendor\\nelmio\\api-doc-bundle\\templates\\Stoplight\\index.html.twig");
     }
 }

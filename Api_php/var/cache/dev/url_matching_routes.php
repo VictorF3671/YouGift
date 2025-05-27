@@ -10,10 +10,10 @@ return [
     [ // $staticRoutes
         '/api/v1' => [[['_route' => 'app.swagger_ui', '_controller' => 'nelmio_api_doc.controller.swagger_ui', 'require_auth' => false], null, ['GET' => 0], null, false, false, null]],
         '/api/v1/doc.json' => [[['_route' => 'app.swagger', '_controller' => 'nelmio_api_doc.controller.swagger', 'require_auth' => false], null, ['GET' => 0], null, false, false, null]],
-        '/auth/registrar-usuario' => [[['_route' => 'app_auth_register', '_controller' => 'App\\Controller\\AuthController::register'], null, ['POST' => 0], null, false, false, null]],
-        '/auth/login' => [[['_route' => 'app_auth_login', '_controller' => 'App\\Controller\\AuthController::login'], null, ['POST' => 0], null, false, false, null]],
-        '/usuario/listar' => [[['_route' => 'visualizar_usuario', '_controller' => 'App\\Controller\\UsuarioController::viewUser'], null, ['GET' => 0], null, false, false, null]],
-        '/usuario/listar-todos' => [[['_route' => 'visualizar_todos_usuario', '_controller' => 'App\\Controller\\UsuarioController::viewUserAll'], null, ['GET' => 0], null, false, false, null]],
+        '/api/auth/registrar-usuario' => [[['_route' => 'app_auth_register', '_controller' => 'App\\Controller\\AuthController::register'], null, ['POST' => 0], null, false, false, null]],
+        '/api/auth/login' => [[['_route' => 'app_auth_login', '_controller' => 'App\\Controller\\AuthController::login'], null, ['POST' => 0], null, false, false, null]],
+        '/api/usuario/listar' => [[['_route' => 'visualizar_usuario', '_controller' => 'App\\Controller\\UsuarioController::viewUser'], null, ['GET' => 0], null, false, false, null]],
+        '/api/usuario/listar-todos' => [[['_route' => 'visualizar_todos_usuario', '_controller' => 'App\\Controller\\UsuarioController::viewUserAll'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -30,13 +30,10 @@ return [
                         .'|validation_errors/([^/]++)(?'
                             .'|(*:257)'
                         .')'
+                        .'|usuario/remover/([^/]++)(*:290)'
                     .')'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:296)'
-                .'|/usuario/(?'
-                    .'|atualizar/([^/]++)(*:334)'
-                    .'|remover/([^/]++)(*:358)'
-                .')'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:328)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -51,10 +48,9 @@ return [
             [['_route' => '_api_validation_errors_hydra', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_hydra', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_jsonapi', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_jsonapi', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
         ],
-        296 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        334 => [[['_route' => 'atualizar_usuario', '_controller' => 'App\\Controller\\UsuarioController::atualizar'], ['id'], ['PUT' => 0], null, false, true, null]],
-        358 => [
-            [['_route' => 'remover_usuario', '_controller' => 'App\\Controller\\UsuarioController::remover'], ['id'], ['DELETE' => 0], null, false, true, null],
+        290 => [[['_route' => 'remover_usuario', '_controller' => 'App\\Controller\\UsuarioController::remover'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        328 => [
+            [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
