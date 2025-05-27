@@ -15,8 +15,8 @@
 
         <ion-col size="12" sizeMd="5" class="img-container">
           <ion-badge color="warning" class="best-seller">⭐ Best Seller</ion-badge>
-          <img [src]="gift.imagem" alt="{{ gift.nome }}" />
-          <ion-card-title>{{ gift.nome }} - Digital Gift Card</ion-card-title>
+          <img [src]="gift.image_url" alt="{{ gift.name }}" />
+          <ion-card-title>{{ gift.name }} - Digital Gift Card</ion-card-title>
         </ion-col>
 
         
@@ -25,14 +25,8 @@
           <p>Select your amount</p>
 
           <ion-segment [(ngModel)]="valorSelecionado" color="dark">
-            <ion-segment-button value="25" (click)="selecionarValor(25)">
-              BRL 25,00 
-            </ion-segment-button>
-            <ion-segment-button value="50" (click)="selecionarValor(50)">
-              BRL 50,00
-            </ion-segment-button>
-            <ion-segment-button value="100" (click)="selecionarValor(100)">
-              BRL 100,00
+            <ion-segment-button *ngFor="let value of values_gifts" [value]="value.value" (click)="selecionarValor(value.value)">
+              {{ value.value }}
             </ion-segment-button>
           </ion-segment>
 
@@ -42,7 +36,7 @@
             <ion-button size="small" (click)="increase()">+</ion-button>
           </div>
           <div class="container-button"> 
-              
+             
               <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Cancelar</ion-button>
               <ion-button expand="block" color="success" (click)="buyNow()">Comprar</ion-button>
           </div>

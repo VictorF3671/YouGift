@@ -1,0 +1,11 @@
+export interface IGiftCards{
+    id: number;
+    name: string;
+    desc: string;
+    image_url: string;
+    company: string;
+    created_at: string
+
+
+
+}

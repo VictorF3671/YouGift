@@ -16,7 +16,7 @@ import { AxiosContextService } from 'src/server/axiosContext.server';
 })
 export class SignupPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
-  user: IUsuario = { nome: '', email: '', cpf: '', senha: '' };
+  user: IUsuario = {id: 0 , cpf: '', fullname: '', email:'', password: '', phone_number: '', group: 2 };
   mostrarErro = false;
   mensagemErro = '';
   constructor(private router: Router, private axiosContext: AxiosContextService) { }
@@ -24,13 +24,13 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
   async verifySignUp() {
-    if (!this.user.email || !this.user.nome || !this.user.senha || !this.user.cpf) {
+    if (!this.user.email || !this.user.fullname || !this.user.password || !this.user.phone_number  || !this.user.cpf) {
       this.mensagemErro = " Preencha todos os campos corretamente";
       this.mostrarErro = true;
       return;
     }
     try {
-      const response = this.axios.post('/Cadastro/', this.user)
+      const response = this.axios.post('/users/', this.user)
       // if (response.data.success) {
       //   this.router.navigate(['/login'])
 

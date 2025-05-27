@@ -9,7 +9,7 @@ export class AxiosContextService {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'http://localhost:8000/api/',
+      baseURL: 'http://localhost:8000/',
       headers: {
         'Content-Type': 'application/json'
       }
