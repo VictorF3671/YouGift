@@ -1,6 +1,9 @@
 <?php
-namespace Core\UseCase\Giftcard\ComprarGiftcard;
+namespace Core\UseCase\Giftcard;
 
+use Api_php\core\Domain\Pagamento\Entity\Pagamento;
+use Api_php\core\Domain\Pagamento\Enum\StatusPagamento;
+use Api_php\core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
 use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardInputDto;
 use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardOutputDto;
 use Core\Domain\Venda\Entity\Venda;
@@ -17,7 +20,8 @@ class ComprarGiftcardUseCase
     public function __construct(
         private VendaRepositoryInterface $vendaRepository,
         private GiftcardValueRepositoryInterface $giftcardValueRepository,
-        private GiftcardSerialRepositoryInterface $giftcardSerialRepository
+        private GiftcardSerialRepositoryInterface $giftcardSerialRepository,
+        private PagamentoRepositoryInterface $pagamentoRepository
     ) {}
 
     public function execute(ComprarGiftcardInputDto $input): ComprarGiftcardOutputDto
@@ -34,6 +38,16 @@ class ComprarGiftcardUseCase
             criadoEm: new DateTimeImmutable()
         );
         $this->vendaRepository->save($venda);
+
+        $pagamento = new Pagamento(
+            id: Uuid::uuid4()->toString(),
+            vendaId: $venda->getId(),
+            metodoPagamento: $input->metodoPagamento,
+            cartaoId: $input->cartaoId,
+            status: StatusPagamento::PENDENTE,
+            criadoEm: new DateTimeImmutable()
+        );
+        $this->pagamentoRepository->save($pagamento);
 
         $codigoSerial = strtoupper(bin2hex(random_bytes(8)));
 

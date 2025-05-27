@@ -1,5 +1,5 @@
 <?php
-namespace Core\Application\UseCase\ComprarGiftcard;
+namespace Core\UseCase\Giftcard\DTO;
 
 class ComprarGiftcardOutputDto
 {

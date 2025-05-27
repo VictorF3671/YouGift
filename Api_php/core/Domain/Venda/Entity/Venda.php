@@ -1,4 +1,5 @@
 <?php
+
 namespace Core\Domain\Venda\Entity;
 
 use DateTimeImmutable;
@@ -13,9 +14,24 @@ class Venda
         private DateTimeImmutable $criadoEm,
     ) {}
 
-    public function getId(): string { return $this->id; }
-    public function getUsuarioId(): string { return $this->usuarioId; }
-    public function getGiftcardValueId(): string { return $this->giftcardValueId; }
-    public function getValor(): float { return $this->valor; }
-    public function getCriadoEm(): DateTimeImmutable { return $this->criadoEm; }
+    public function getId(): string
+    {
+        return $this->id;
+    }
+    public function getUsuarioId(): string
+    {
+        return $this->usuarioId;
+    }
+    public function getGiftcardValueId(): string
+    {
+        return $this->giftcardValueId;
+    }
+    public function getValor(): float
+    {
+        return $this->valor;
+    }
+    public function getCriadoEm(): DateTimeImmutable
+    {
+        return $this->criadoEm;
+    }
 }

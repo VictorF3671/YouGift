@@ -8,7 +8,9 @@ class ListarComprasDoUsuarioOutputDto
         public string $nomeProduto,
         public float $valor,
         public string $codigoSerial,
-        public string $status,
-        public string $dataCompra
+        public string $statusSerial,
+        public string $metodoPagamento,
+        public string $statusPagamento,
+        public string $dataCompra,
     ) {}
 }
