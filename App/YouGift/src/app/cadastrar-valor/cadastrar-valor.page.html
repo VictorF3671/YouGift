@@ -28,16 +28,13 @@
   </ion-item>
 </ion-list>
 
-<div *ngFor="let preco of precos; let i = index">
+<div>
   <ion-item lines="none">
-    <ion-label position="floating">Preço {{ i + 1 }}</ion-label>
-    <ion-input type="number" [(ngModel)]="precos[i]"></ion-input>
+    <ion-label position="floating">Preço</ion-label>
+    <ion-input type="number" [(ngModel)]="precos"></ion-input>
   </ion-item>
 </div>
 
-<div class="ion-text-center">
-  <ion-button fill="outline" color="primary" (click)="adicionarPreco()">Adicionar Preço</ion-button>
-</div>
 
 <div class="container-button">
   <ion-button expand="block" color="medium" fill="outline" (click)="navegarHome()">Voltar</ion-button>

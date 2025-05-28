@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { YCardErrorComponent } from '../components/ycard-error/ycard-error.component';
 import { Router } from '@angular/router';
 import { CompraService } from '../services/compra.service';
+import { AxiosContextService } from 'src/server/axiosContext.server';
 
 @Component({
   selector: 'app-tela-pagamento',
@@ -16,8 +17,8 @@ import { CompraService } from '../services/compra.service';
 export class TelaPagamentoPage implements OnInit {
    mostrarErro = false;
   mensagemErro = '';
-  constructor(private router: Router, private compraContext: CompraService) { }
-
+  constructor(private router: Router, private compraContext: CompraService, private axiosContext: AxiosContextService) { }
+   private axios = this.axiosContext.getAxiosInstance();
   ngOnInit() {
     const compra = this.compraContext.getCompra();
   if (compra) {
@@ -40,9 +41,18 @@ gift = {
 
 quantidade = 1;
 
+async carregarGifts(id: number) {
+  try {
+    const response = await this.axios.get(`/giftcards/${id}`);
+    this.gift = response.data;
+  } catch (error) {
+    console.error('Erro ao carregar gift:', error);
+  }
+}
+
 finalizarCompra() {
   const total = this.gift.valor * this.quantidade;
-  console.log('Compra finalizada. Total:', total);
+
   // Chamada da API, geração dos seriais, envio por e-mail etc.
 }
   fecharErro() {
