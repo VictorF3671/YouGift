@@ -1,7 +1,7 @@
 <?php
-namespace Core\UseCase\Giftcard\DTO;
+namespace Core\UseCase\GiftCard\DTO;
 
-use Api_php\core\Domain\Pagamento\Enum\MetodoPagamento;
+use Core\Domain\Pagamento\Enum\MetodoPagamento;
 
 class ComprarGiftcardInputDto
 {
@@ -12,3 +12,4 @@ class ComprarGiftcardInputDto
         public ?string $cartaoId = null
     ) {}
 }
+

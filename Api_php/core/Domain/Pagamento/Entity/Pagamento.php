@@ -1,8 +1,8 @@
 <?php
-namespace Api_php\core\Domain\Pagamento\Entity;
+namespace Core\Domain\Pagamento\Entity;
 
-use Api_php\core\Domain\Pagamento\Enum\MetodoPagamento;
-use Api_php\core\Domain\Pagamento\Enum\StatusPagamento;
+use Core\Domain\Pagamento\Enum\MetodoPagamento;
+use Core\Domain\Pagamento\Enum\StatusPagamento;
 use DateTimeImmutable;
 
 class Pagamento

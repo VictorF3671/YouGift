@@ -1,6 +1,8 @@
 <?php
 
-namespace Api_php\core\Domain\Pagamento\Enum;
+namespace Core\Domain\Pagamento\Enum;
+
+use InvalidArgumentException;
 
 enum MetodoPagamento: int
 {
@@ -20,7 +22,7 @@ enum MetodoPagamento: int
         return match ($value) {
             0 => self::CARTAO,
             1 => self::PIX,
-            default => throw new \InvalidArgumentException("Método de Pagamento Inválido: $value"),
+            default => throw new InvalidArgumentException("Método de Pagamento Inválido: $value"),
         };
     }
 }

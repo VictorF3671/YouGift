@@ -1,5 +1,5 @@
 <?php
-namespace Api_php\core\Domain\Pagamento\Entity;
+namespace Core\Domain\Pagamento\Entity;
 
 use DateTimeImmutable;
 

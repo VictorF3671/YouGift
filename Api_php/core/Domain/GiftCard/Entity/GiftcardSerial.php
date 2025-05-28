@@ -2,7 +2,7 @@
 
 namespace Core\Domain\GiftCard\Entity;
 
-use Core\Domain\Giftcard\Enum\StatusGiftcardSerial;
+use Core\Domain\GiftCard\Enum\StatusGiftcardSerial;
 use DateTimeImmutable;
 
 class GiftcardSerial

@@ -2,7 +2,7 @@
 
 namespace Core\Domain\GiftCard\Repository;
 
-use Core\Domain\Giftcard\Entity\GiftcardValue;
+use Core\Domain\GiftCard\Entity\GiftcardValue;
 
 interface GiftcardValueRepositoryInterface
 {

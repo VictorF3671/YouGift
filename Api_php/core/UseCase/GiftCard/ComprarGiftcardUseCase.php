@@ -1,17 +1,18 @@
 <?php
-namespace Core\UseCase\Giftcard;
+namespace Core\UseCase\GiftCard;
 
-use Api_php\core\Domain\Pagamento\Entity\Pagamento;
-use Api_php\core\Domain\Pagamento\Enum\StatusPagamento;
-use Api_php\core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
-use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardInputDto;
-use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardOutputDto;
+use Core\Domain\Pagamento\Entity\Pagamento;
+use Core\Domain\Pagamento\Enum\StatusPagamento;
+use Core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto;
 use Core\Domain\Venda\Entity\Venda;
-use Core\Domain\Giftcard\Entity\GiftcardSerial;
-use Core\Domain\Giftcard\Enum\StatusGiftcardSerial;
+use Core\Domain\GiftCard\Entity\GiftcardSerial;
+use Core\Domain\GiftCard\Enum\StatusGiftcardSerial;
 use Core\Domain\Venda\Repository\VendaRepositoryInterface;
-use Core\Domain\Giftcard\Repository\GiftcardValueRepositoryInterface;
-use Core\Domain\Giftcard\Repository\GiftcardSerialRepositoryInterface;
+use Core\Domain\GiftCard\Repository\GiftcardValueRepositoryInterface;
+use Core\Domain\GiftCard\Repository\GiftcardSerialRepositoryInterface;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto as DTOComprarGiftcardInputDto;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto as DTOComprarGiftcardOutputDto;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 
@@ -24,7 +25,7 @@ class ComprarGiftcardUseCase
         private PagamentoRepositoryInterface $pagamentoRepository
     ) {}
 
-    public function execute(ComprarGiftcardInputDto $input): ComprarGiftcardOutputDto
+    public function execute(DTOComprarGiftcardInputDto $input): DTOComprarGiftcardOutputDto
     {
         $valor = $this->giftcardValueRepository
             ->findById($input->giftcardValueId)

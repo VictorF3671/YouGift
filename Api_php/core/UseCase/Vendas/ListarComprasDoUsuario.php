@@ -1,13 +1,11 @@
 <?php
 namespace Core\Domain\UseCase\Vendas;
 
-use Api_php\core\Domain\Pagamento\Enum\StatusPagamento;
-use Api_php\core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
-use Core\Domain\GiftCard\Repository\GiftcardSerialRepositoryInterface;
+use Core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
+use Core\Domain\Giftcard\Repository\GiftcardSerialRepositoryInterface;
 use Core\Domain\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto;
 use Core\Domain\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto;
 use Core\Domain\Venda\Repository\VendaRepositoryInterface;
-use Doctrine\Migrations\Tools\Console\Command\StatusCommand;
 
 class ListarComprasDoUsuario
 {
@@ -19,7 +17,7 @@ class ListarComprasDoUsuario
 
     public function execute(ListarComprasDoUsuarioInputDto $input): array
     {
-        $vendas = $this->vendaRepository->findByUsuarioId($input->usuarioId);
+        $vendas = $this->vendaRepository->findAllByUsuarioId($input->usuarioId);
         $compras = [];
      
 
