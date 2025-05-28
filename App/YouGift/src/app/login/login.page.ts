@@ -31,7 +31,6 @@ export class LoginPage implements OnInit {
   }
 
   async verifyLogin(){
-     console.log("entrei")
        if (!this.user.email || !this.user.senha) {
         this.mensagemErro = "Preencha todos os campos corretamente";
         this.mostrarErro = true;
@@ -39,8 +38,6 @@ export class LoginPage implements OnInit {
 
      }
     try{
-      console.log(this.user)
-      console.log(this.user)
       const response = await this.axios.post('/auth/login', this.user)
      
       if(response.data.token){

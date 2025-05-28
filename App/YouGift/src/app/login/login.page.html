@@ -1,45 +1,32 @@
-<ycard-error
-    [message]="mensagemErro"
-    [type]="'error'"
-    [visible]="mostrarErro"
-    (onClose)="fecharErro()">
-  </ycard-error>
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons>
-      <img src="assets/icon/logo.png" alt="Logo" style="width: 60px; vertical-align: middle;" />
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ycard-error [message]="mensagemErro" [type]="'error'" [visible]="mostrarErro" (onClose)="fecharErro()">
+</ycard-error>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  
-  <div class="login-background"> 
-    <div class="login-card"> 
+
+  <div class="login-background">
+    <div class="login-card">
       <img src="assets/icon/logo.png" style="width: 80px;" alt="Logo" class="logo" />
 
-      <ion-item lines="none" class="item-custom"> 
+      <ion-item lines="none" class="item-custom">
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="this.user.email"></ion-input> 
+        <ion-input type="email" [(ngModel)]="this.user.email" (keydown.enter)="verifyLogin()"></ion-input>
       </ion-item>
-      <ion-item lines="none" class="item-custom"> 
+      <ion-item lines="none" class="item-custom">
         <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="this.user.senha" ></ion-input> 
+        <ion-input type="password" [(ngModel)]="this.user.senha" (keydown.enter)="verifyLogin()"></ion-input>
       </ion-item>
 
-        <div style="width: 100%; text-align: left; margin-top: 10px;margin-left: 15px; font-size: 14px;">
-          Don’t have an account yet?
-          <ion-label (click)="navegar()" style="color: #d1ff35; text-decoration: underline; font-weight: bold;">
-            Register
-          </ion-label>
-        </div>
-        
-        <ion-button
-          (click)="verifyLogin()"
-          class="button-custom">
-          Entrar
-        </ion-button>
+      <div style="width: 100%; text-align: left; margin-top: 10px;margin-left: 15px; font-size: 14px;">
+        Don't have an account yet?
+        <ion-label (click)="navegar()" style="color: #d1ff35; text-decoration: underline; font-weight: bold;">
+          Register
+        </ion-label>
+      </div>
+
+      <ion-button (click)="verifyLogin()" class="button-custom">
+        Entrar
+      </ion-button>
     </div>
-    
-</div>
+
+  </div>
 </ion-content>

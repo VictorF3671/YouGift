@@ -5,27 +5,29 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  
+
   <div class="button-container">
     <ion-breadcrumbs>
-  <ion-breadcrumb href="/home">
-    <ion-icon slot="start" name="home"></ion-icon>
-    Home
-  </ion-breadcrumb>
-  <ion-breadcrumb href="/gifts-cadastrados">
-    <ion-icon slot="start" name="id-card"></ion-icon>
-    Gifts Cadastrados
-  </ion-breadcrumb>
-</ion-breadcrumbs>
+      <ion-breadcrumb href="/home">
+        <ion-icon slot="start" name="home"></ion-icon>
+        Home
+      </ion-breadcrumb>
+      <ion-breadcrumb href="/gifts-cadastrados">
+        <ion-icon slot="start" name="id-card"></ion-icon>
+        Gifts Cadastrados
+      </ion-breadcrumb>
+    </ion-breadcrumbs>
 
-    <ion-button (click)="irCadastrarValor()" color="warning" fill="solid">
-      <ion-icon slot="start" name="add-outline"></ion-icon>
-      Cadastrar Valor
-    </ion-button>
-    <ion-button (click)="irCadastrarGift()" color="primary" fill="solid">
-      <ion-icon slot="start" name="add-outline"></ion-icon>
-      Cadastrar Novo Gift
-    </ion-button>
+    <div class="button-group">
+      <ion-button (click)="irCadastrarValor()" color="warning" fill="solid">
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        Novo Valor
+      </ion-button>
+      <ion-button (click)="irCadastrarGift()" color="primary" fill="solid">
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        Novo Gift Card
+      </ion-button>
+    </div>
   </div>
 
   <ion-grid class="custom-table">

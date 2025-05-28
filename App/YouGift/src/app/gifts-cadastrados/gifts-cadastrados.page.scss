@@ -1,10 +1,17 @@
 
 .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 10px;
   margin-bottom: 16px;
   flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .custom-table {
