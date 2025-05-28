@@ -1,12 +1,22 @@
 #container {
+  padding: 16px;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-bottom: 16px;
 }
+.container-promo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-promo img {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
 .container-geral{
   overflow-y: auto;
 }

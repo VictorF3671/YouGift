@@ -37,8 +37,10 @@
 
 <ion-content class="container-geral" [fullscreen]="true">
   <div id="container">
-    <h2 style="margin-left: 16px;">Novos Gift Cards</h2>
-
+    <div class="container-promo">
+      <img src="assets/promocao.png" alt="Promoção" />
+    </div>
+    <h2 style="margin-left: 16px;">Novos Gift Cards</h2> 
     <div class="carousel-container">
       <div class="carousel" >
         <ion-card  *ngFor="let gift of giftcards" class="gift-card" (click)="abrirDetalhe(gift)">
