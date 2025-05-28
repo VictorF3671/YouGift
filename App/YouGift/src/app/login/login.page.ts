@@ -42,9 +42,10 @@ export class LoginPage implements OnInit {
      
       if(response.data.token){
         const token = response.data.token
-        const roles = response.data.roles
+        const role = response.data.role
+        console.log(response.data)
         localStorage.setItem('token', token)
-        localStorage.setItem('role', roles)
+        localStorage.setItem('role', role)
         this.router.navigate(['/home'])
       }
     }catch (error: any) {

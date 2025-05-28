@@ -21,7 +21,7 @@ export class GiftsCadastradosPage implements OnInit {
   }
 
   async carregarGifts() {
-    const response =  await this.axios.get('/giftcards')
+    const response =  await this.axios.get('/giftcard-produtos')
     this.giftcards = response.data     
   }
   

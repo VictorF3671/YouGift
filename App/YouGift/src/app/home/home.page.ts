@@ -21,9 +21,9 @@ export class HomePage implements OnInit{
   giftcards: IGiftCard[] = [];
 
   ngOnInit() {
-  const role = localStorage.getItem('group'); 
+  const role = localStorage.getItem('role'); 
   console.log(role)
-  this.isAdmin = role === 'admin';
+  this.isAdmin = role === 'ROLE_ADMIN';
   this.carregarGifts()
   }
 

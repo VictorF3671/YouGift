@@ -35,8 +35,6 @@
       <ion-col size="1">ID</ion-col>
       <ion-col size="2">Nome</ion-col>
       <ion-col size="3">Descrição</ion-col>
-      <ion-col size="2">Empresa</ion-col>
-      <ion-col size="2">Criado em</ion-col>
       <ion-col size="2" class="text-center">Ações</ion-col>
     </ion-row>
 
@@ -44,8 +42,6 @@
       <ion-col size="1">{{ gift.id }}</ion-col>
       <ion-col size="2">{{ gift.name }}</ion-col>
       <ion-col size="3">{{ gift.desc }}</ion-col>
-      <ion-col size="2">{{ gift.company }}</ion-col>
-      <ion-col size="2">{{ gift.createdAt | date: 'short' }}</ion-col>
       <ion-col size="2" class="text-center">
         <ion-button color="danger" fill="clear" (click)="excluirGift(gift.id)">
           <ion-icon name="trash-outline"></ion-icon>
