@@ -4,7 +4,6 @@ namespace Core\UseCase\Usuario;
 
 use App\Infra\JwtTokenService;
 use App\Repository\AuthUsuarioRepository;
-use App\Repository\UsuarioRepository;
 use Core\UseCase\Usuario\DTO\LoginInputDto;
 use Exception;
 

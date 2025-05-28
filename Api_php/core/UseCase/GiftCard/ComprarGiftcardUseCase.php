@@ -1,14 +1,18 @@
 <?php
-namespace Core\UseCase\Giftcard\ComprarGiftcard;
+namespace Core\UseCase\GiftCard;
 
-use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardInputDto;
-use Core\Application\UseCase\ComprarGiftcard\ComprarGiftcardOutputDto;
+use Core\Domain\Pagamento\Entity\Pagamento;
+use Core\Domain\Pagamento\Enum\StatusPagamento;
+use Core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto;
 use Core\Domain\Venda\Entity\Venda;
-use Core\Domain\Giftcard\Entity\GiftcardSerial;
-use Core\Domain\Giftcard\Enum\StatusGiftcardSerial;
+use Core\Domain\GiftCard\Entity\GiftcardSerial;
+use Core\Domain\GiftCard\Enum\StatusGiftcardSerial;
 use Core\Domain\Venda\Repository\VendaRepositoryInterface;
-use Core\Domain\Giftcard\Repository\GiftcardValueRepositoryInterface;
-use Core\Domain\Giftcard\Repository\GiftcardSerialRepositoryInterface;
+use Core\Domain\GiftCard\Repository\GiftcardValueRepositoryInterface;
+use Core\Domain\GiftCard\Repository\GiftcardSerialRepositoryInterface;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto as DTOComprarGiftcardInputDto;
+use Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto as DTOComprarGiftcardOutputDto;
 use DateTimeImmutable;
 use Ramsey\Uuid\Uuid;
 
@@ -17,10 +21,11 @@ class ComprarGiftcardUseCase
     public function __construct(
         private VendaRepositoryInterface $vendaRepository,
         private GiftcardValueRepositoryInterface $giftcardValueRepository,
-        private GiftcardSerialRepositoryInterface $giftcardSerialRepository
+        private GiftcardSerialRepositoryInterface $giftcardSerialRepository,
+        private PagamentoRepositoryInterface $pagamentoRepository
     ) {}
 
-    public function execute(ComprarGiftcardInputDto $input): ComprarGiftcardOutputDto
+    public function execute(DTOComprarGiftcardInputDto $input): DTOComprarGiftcardOutputDto
     {
         $valor = $this->giftcardValueRepository
             ->findById($input->giftcardValueId)
@@ -34,6 +39,16 @@ class ComprarGiftcardUseCase
             criadoEm: new DateTimeImmutable()
         );
         $this->vendaRepository->save($venda);
+
+        $pagamento = new Pagamento(
+            id: Uuid::uuid4()->toString(),
+            vendaId: $venda->getId(),
+            metodoPagamento: $input->metodoPagamento,
+            cartaoId: $input->cartaoId,
+            status: StatusPagamento::PENDENTE,
+            criadoEm: new DateTimeImmutable()
+        );
+        $this->pagamentoRepository->save($pagamento);
 
         $codigoSerial = strtoupper(bin2hex(random_bytes(8)));
 
