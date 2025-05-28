@@ -1,6 +1,6 @@
 <?php
 
-namespace Infra\Repository;
+namespace App\Repository;
 
 use Core\Domain\GiftCard\Entity\GiftcardSerial;
 use Core\Domain\GiftCard\Repository\GiftcardSerialRepositoryInterface;

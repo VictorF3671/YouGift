@@ -1,5 +1,6 @@
 <?php
-namespace Infra\Repository;
+
+namespace App\Repository;
 
 use Core\Domain\Giftcard\Entity\GiftcardValue;
 use Core\Domain\Giftcard\Repository\GiftcardValueRepositoryInterface;
@@ -14,5 +15,11 @@ class GiftcardValueRepository implements GiftcardValueRepositoryInterface
     public function findById(string $id): GiftcardValue
     {
         return $this->em->getRepository(GiftcardValue::class)->find($id);
+    }
+
+    public function findByProdutoId(string $produtoId): array
+    {
+        return $this->em->getRepository(GiftcardValue::class)
+            ->findBy(['produto' => $produtoId]);
     }
 }

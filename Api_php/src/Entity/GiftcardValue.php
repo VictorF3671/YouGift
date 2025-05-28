@@ -12,18 +12,27 @@ class GiftcardValue
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: "integer")]
-    private int $id;
+    public int $id;
 
     #[ORM\ManyToOne(targetEntity: GiftcardProduto::class, inversedBy: "valores")]
     #[ORM\JoinColumn(name: "giftcard_produto_id", referencedColumnName: "id")]
-    private GiftcardProduto $giftcardProduto;
+    public GiftcardProduto $giftcardProduto;
 
     #[ORM\Column(type: "float")]
-    private float $valor;
+    public float $valor;
 
     #[ORM\Column(type: "string")]
-    private string $descricao;
+    public string $descricao;
 
     #[ORM\Column(name: "criado_em", type: "datetime_immutable")]
-    private DateTimeImmutable $criadoEm;
+    public DateTimeImmutable $criadoEm;
+
+    public function setValor(float $valor): void
+    {
+        $this->valor = $valor;
+    }
+    public function setCriadoEm(DateTimeImmutable $data): void
+    {
+        $this->criadoEm = $data;
+    }
 }

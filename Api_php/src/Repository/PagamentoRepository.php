@@ -1,6 +1,6 @@
 <?php
 
-namespace Infra\Repository;
+namespace App\Repository;
 
 use Core\Domain\Pagamento\Entity\Pagamento;
 use Core\Domain\Pagamento\Repository\PagamentoRepositoryInterface;

@@ -2,6 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Usuario;
+use App\Infra\JwtTokenService;
+use App\Repository\AuthUsuarioRepository;
+use App\Repository\UsuarioRepository;
+use Core\Domain\Usuario\Repository\IUsuarioRepository;
 use Core\UseCase\Usuario\AutenticarUsuario;
 use Core\UseCase\Usuario\DTO\LoginInputDto;
 use Core\UseCase\Usuario\RegistrarUsuario;
@@ -16,6 +21,8 @@ class AuthController extends AbstractController
     public function __construct(
         private readonly AutenticarUsuario $autenticarUsuario,
         private RegistrarUsuario $registrarUsuario,
+        private AuthUsuarioRepository $usuarioRepositoryOrm,
+        private JwtTokenService $jwtService
     ) {}
 
     #[Route('/registrar-usuario', methods: ['POST'])]
@@ -55,17 +62,21 @@ class AuthController extends AbstractController
     public function login(Request $request): JsonResponse
     {
         $dados = json_decode($request->getContent(), true);
+
         if (!$dados || empty($dados['email']) || empty($dados['senha'])) {
             return new JsonResponse(['erro' => 'Email e senha são obrigatórios.'], 400);
         }
 
         try {
             $dto = new LoginInputDto($dados['email'], $dados['senha']);
-            $token = $this->autenticarUsuario->executar($dto);
+            $usuario = $this->usuarioRepositoryOrm->loadUserByIdentifier($dto->email);
+
+            $token = $this->jwtService->gerarToken($usuario);
 
             return new JsonResponse([
-                'resposta'=> 'token criado com sucesso',
-                'token' => $token], 200);
+                'token' => $token,
+                'role' => $usuario->getRoles()[0], // ROLE_USER ou ROLE_ADMIN
+            ], 200);
         } catch (\Throwable $e) {
             return new JsonResponse(['erro' => $e->getMessage()], 401);
         }

@@ -6,6 +6,7 @@ use App\Entity\Usuario as EntityUsuario;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
+use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 
@@ -18,7 +19,13 @@ class AuthUsuarioRepository extends ServiceEntityRepository implements UserProvi
 
     public function loadUserByIdentifier(string $identifier): UserInterface
     {
-        return $this->findOneBy(['email' => $identifier]);
+        $user = $this->findOneBy(['email' => $identifier]);
+
+        if (!$user) {
+            throw new UserNotFoundException("Usuário com email '{$identifier}' não encontrado.");
+        }
+
+        return $user;
     }
 
     public function refreshUser(UserInterface $user): UserInterface
@@ -34,5 +41,4 @@ class AuthUsuarioRepository extends ServiceEntityRepository implements UserProvi
     {
         return $class === \App\Entity\Usuario::class;
     }
-
 }

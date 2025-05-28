@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</parameter>
+    <parameter key="kernel.project_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,9 +9,9 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\log</parameter>
+    <parameter key="kernel.build_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
@@ -27,47 +27,47 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="NelmioCorsBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\nelmio\cors-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\nelmio\cors-bundle</parameter>
         <parameter key="namespace">Nelmio\CorsBundle</parameter>
       </parameter>
       <parameter key="ApiPlatformBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle</parameter>
         <parameter key="namespace">ApiPlatform\Symfony\Bundle</parameter>
       </parameter>
       <parameter key="NelmioApiDocBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle</parameter>
         <parameter key="namespace">Nelmio\ApiDocBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\twig\extra-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\twig\extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\maker-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\maker-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="LexikJWTAuthenticationBundle" type="collection">
-        <parameter key="path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\lexik\jwt-authentication-bundle</parameter>
+        <parameter key="path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\lexik\jwt-authentication-bundle</parameter>
         <parameter key="namespace">Lexik\Bundle\JWTAuthenticationBundle</parameter>
       </parameter>
     </parameter>
@@ -105,17 +105,17 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
-    <parameter key="cache.prefix.seed">_C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -125,13 +125,13 @@
     </parameter>
     <parameter key="session.save_path">null</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/templates</parameter>
+    <parameter key="twig.default_path">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/templates</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_ADMIN</parameter>
@@ -222,7 +222,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -367,7 +367,7 @@
       </parameter>
     </parameter>
     <parameter key="api_platform.resource_class_directories" type="collection">
-      <parameter>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/src/Entity</parameter>
+      <parameter>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/src/Entity</parameter>
     </parameter>
     <parameter key="api_platform.class_name_resources" type="collection">
       <parameter>ApiPlatform\State\ApiResource\Error</parameter>
@@ -449,8 +449,45 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="Core\UseCase\Usuario\AutenticarUsuario"/>
       <argument type="service" id="Core\UseCase\Usuario\RegistrarUsuario"/>
+      <argument type="service" id="App\Repository\AuthUsuarioRepository"/>
+      <argument type="service" id="App\Infra\JwtTokenService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\AuthController"/>
+      </call>
+    </service>
+    <service id="App\Controller\DadosBancoController" class="App\Controller\DadosBancoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\DadosBancoController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GiftcardProdutoController" class="App\Controller\GiftcardProdutoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GiftcardProdutoController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GiftcardSerialController" class="App\Controller\GiftcardSerialController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GiftcardSerialController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GiftcardValueController" class="App\Controller\GiftcardValueController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\GiftcardValueController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PagamentoController" class="App\Controller\PagamentoController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\PagamentoController"/>
       </call>
     </service>
     <service id="App\Controller\UsuarioController" class="App\Controller\UsuarioController" public="true" autowire="true" autoconfigure="true">
@@ -463,6 +500,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UsuarioController"/>
       </call>
     </service>
+    <service id="App\Controller\VendaController" class="App\Controller\VendaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\VendaController"/>
+      </call>
+    </service>
     <service id="App\Infra\JwtTokenService" class="App\Infra\JwtTokenService" autowire="true" autoconfigure="true">
       <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
     </service>
@@ -470,19 +514,42 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\GiftcardProdutoRepository" class="App\Repository\GiftcardProdutoRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\GiftcardSerialRepository" class="App\Repository\GiftcardSerialRepository" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Repository\GiftcardValueRepository" class="App\Repository\GiftcardValueRepository" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Case mismatch between loaded and declared class names: &quot;Core\Domain\Giftcard\Repository\GiftcardValueRepositoryInterface&quot; vs &quot;Core\Domain\GiftCard\Repository\GiftcardValueRepositoryInterface&quot;."/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Repository\PagamentoRepository" class="App\Repository\PagamentoRepository" autowire="true" autoconfigure="true">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
     <service id="App\Repository\UsuarioRepository" class="App\Repository\UsuarioRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+    </service>
+    <service id="App\Repository\VendaRepository" class="App\Repository\VendaRepository" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="Core\Domain\GiftCard\Entity\GiftCardProduto" class="Core\Domain\GiftCard\Entity\GiftCardProduto" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\GiftCard\Entity\GiftCardProduto&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="Core\Domain\GiftCard\Entity\GiftCardValor" class="Core\Domain\GiftCard\Entity\GiftCardValor" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\Domain\GiftCard\Entity\GiftCardValor&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\Domain\GiftCard\Entity\GiftCardValor.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;Core\Domain\GiftCard\Entity\GiftCardValor&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\Domain\GiftCard\Entity\GiftCardValor.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="Core\Domain\GiftCard\Entity\GiftcardSerial" class="Core\Domain\GiftCard\Entity\GiftcardSerial" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\GiftCard\Entity\GiftcardSerial&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="Core\Domain\Pagamento\Entity\DadosBanco" class="Core\Domain\Pagamento\Entity\DadosBanco" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\Pagamento\Entity\DadosBanco&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="Core\Domain\Pagamento\Entity\Pagamento" class="Core\Domain\Pagamento\Entity\Pagamento" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\Pagamento\Entity\Pagamento&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
     <service id="Core\Domain\Usuario\Entity\Usuario" class="Core\Domain\Usuario\Entity\Usuario" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\Usuario\Entity\Usuario&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
@@ -491,13 +558,16 @@
       <tag name="container.error" message="Cannot autowire service &quot;Core\Domain\Venda\Entity\Venda&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="Core\UseCase\GiftCard\ComprarGiftcardUseCase" class="Core\UseCase\GiftCard\ComprarGiftcardUseCase" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\GiftCard\ComprarGiftcardUseCase&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\GiftCard\ComprarGiftcardUseCase.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Cannot autowire service &quot;Core\UseCase\GiftCard\ComprarGiftcardUseCase&quot;: argument &quot;$giftcardValueRepository&quot; of method &quot;__construct()&quot; references interface &quot;Core\Domain\GiftCard\Repository\GiftcardValueRepositoryInterface&quot; but no such service exists. You should maybe alias this interface to the existing &quot;App\Repository\GiftcardValueRepository&quot; service."/>
     </service>
     <service id="Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto" class="Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Cannot autowire service &quot;Core\UseCase\GiftCard\DTO\ComprarGiftcardInputDto&quot;: argument &quot;$usuarioId&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto" class="Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Cannot autowire service &quot;Core\UseCase\GiftCard\DTO\ComprarGiftcardOutputDto&quot;: argument &quot;$vendaId&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="Core\UseCase\GiftCard\DeletarGiftcardProdutoUseCase" class="Core\UseCase\GiftCard\DeletarGiftcardProdutoUseCase" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\GiftCard\DeletarGiftcardProdutoUseCase&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\GiftCard\DeletarGiftcardProdutoUseCase.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="Core\UseCase\Usuario\AtualizarUsuario" class="Core\UseCase\Usuario\AtualizarUsuario" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Repository\UsuarioRepository"/>
@@ -509,6 +579,9 @@
     <service id="Core\UseCase\Usuario\DTO\LoginInputDto" class="Core\UseCase\Usuario\DTO\LoginInputDto" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;Core\UseCase\Usuario\DTO\LoginInputDto&quot;: argument &quot;$email&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
+    <service id="Core\UseCase\Usuario\DTO\LoginOutputDto" class="Core\UseCase\Usuario\DTO\LoginOutputDto" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;Core\UseCase\Usuario\DTO\LoginOutputDto&quot;: argument &quot;$token&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
     <service id="Core\UseCase\Usuario\RegistrarUsuario" class="Core\UseCase\Usuario\RegistrarUsuario" autowire="true" autoconfigure="true">
       <argument type="service" id="App\Repository\UsuarioRepository"/>
     </service>
@@ -516,13 +589,16 @@
       <argument type="service" id="App\Repository\UsuarioRepository"/>
     </service>
     <service id="Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto" class="Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\DTO\ListarComprasDoUsuarioInputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto" class="Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\DTO\ListarComprasDoUsuarioOutputDto.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="Core\UseCase\Vendas\ListarComprarDoUsuario" class="Core\UseCase\Vendas\ListarComprarDoUsuario" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\ListarComprarDoUsuario&quot; to be defined in file &quot;C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\ListarComprarDoUsuario.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\ListarComprarDoUsuario&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\ListarComprarDoUsuario.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="Core\UseCase\Vendas\ListarComprasDoUsuario" class="Core\UseCase\Vendas\ListarComprasDoUsuario" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;Core\UseCase\Vendas\ListarComprasDoUsuario&quot; to be defined in file &quot;C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\composer/../../core\UseCase\Vendas\ListarComprasDoUsuario.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
@@ -555,7 +631,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.gxIvkJl"/>
+      <argument type="service" id=".service_locator.iqTbbfR"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -638,7 +714,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/http_cache</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -648,7 +724,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -877,7 +953,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -913,7 +989,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1108,7 +1184,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1280,9 +1356,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>5luLKdpEeP</argument>
+      <argument>F02Y6uz9m3</argument>
       <argument>0</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/app</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1295,40 +1371,40 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>kipCtvmgfP</argument>
+      <argument>H-4o6tYOir</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>KQXE8-b7-9</argument>
+      <argument>q1HfDn7Bnr</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>YWvwWfHyTn</argument>
+      <argument>GnQ4y63FFa</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>Hy0M1SSeRc</argument>
+      <argument>+Ci0vnoG2Z</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1338,7 +1414,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1357,7 +1433,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/app</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1942,7 +2018,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.gxIvkJl"/>
+      <argument type="service" id=".service_locator.iqTbbfR"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -2040,7 +2116,7 @@
       <argument type="service" id=".service_locator.RTjHFcp.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev</argument>
+        <argument key="cache_dir">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2089,7 +2165,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -2116,7 +2192,7 @@
       <argument type="service" id="property_info.reflection_extractor" on-invalid="null"/>
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
       <argument>APP_SECRET</argument>
     </service>
@@ -2129,7 +2205,7 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/.env.dev.local</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/.env.dev.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer">
       <argument type="collection">
@@ -2288,10 +2364,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/serialization.php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/serialization.php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2504,7 +2580,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/sessions</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2589,10 +2665,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/validation.php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/validation.php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -2875,10 +2951,10 @@
     <service id="cache.validator_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>YIBidgVgho</argument>
+      <argument>E6g32dcl3W</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2921,7 +2997,7 @@
       <tag name="kernel.reset" method="resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/twig</argument>
+        <argument key="cache">C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3025,7 +3101,7 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/templates</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/templates</argument>
       <argument type="collection">
         <argument>*.twig</argument>
       </argument>
@@ -3039,57 +3115,57 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle/templates</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-bundle/templates</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle/Resources/views</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle/Resources/views</argument>
         <argument>ApiPlatform</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle/Resources/views</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\api-platform\symfony\Bundle/Resources/views</argument>
         <argument>!ApiPlatform</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle/templates</argument>
         <argument>NelmioApiDoc</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\nelmio\api-doc-bundle/templates</argument>
         <argument>!NelmioApiDoc</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\maker-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\maker-bundle/templates</argument>
         <argument>Maker</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\vendor\symfony\maker-bundle/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\vendor\symfony\maker-bundle/templates</argument>
         <argument>!Maker</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/templates</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/templates</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -3186,9 +3262,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/templates</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -3361,10 +3437,10 @@
     <service id="cache.security_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>N2Pfj7ou6n</argument>
+      <argument>WePH76Kw9A</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3380,10 +3456,10 @@
     <service id="cache.security_is_granted_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>mDtQ16bUIY</argument>
+      <argument>k-P0HZWU1z</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3393,10 +3469,10 @@
     <service id="cache.security_is_csrf_token_valid_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>CFgyUiYkJU</argument>
+      <argument>pwjqxLkN3A</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4293,7 +4369,7 @@
         <argument key="default">600</argument>
       </argument>
     </service>
-    <service id=".1_ServiceLocator~5Sv9GNN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".1_ServiceLocator~R5ZF945" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -4311,7 +4387,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator..DQ9dYu"/>
+      <argument type="service" id=".service_locator.7R62h6U"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4500,7 +4576,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4543,7 +4619,7 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\src\Entity</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\src\Entity</argument>
       </argument>
       <argument>true</argument>
     </service>
@@ -4605,7 +4681,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/migrations</argument>
+        <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -4926,10 +5002,10 @@
     <service id="api_platform.cache.route_name_resolver" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>z+34Z+Ep-K</argument>
+      <argument>r9MXf+nKNA</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5065,10 +5141,10 @@
     <service id="api_platform.cache.metadata.resource" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>a2F2IKhZ-B</argument>
+      <argument>vUUsI+0vtv</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5142,10 +5218,10 @@
     <service id="api_platform.cache.metadata.property" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>CcnlUs0vd2</argument>
+      <argument>epgRJSOS-E</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5219,10 +5295,10 @@
     <service id="api_platform.cache.metadata.resource_collection" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>YM5G6qWr0G</argument>
+      <argument>5MYkJLboeg</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5280,15 +5356,15 @@
     <service id="api_platform.json_schema.definition_name_factory" class="ApiPlatform\JsonSchema\DefinitionNameFactory">
       <argument>%api_platform.jsonschema_formats%</argument>
     </service>
-    <service id=".2_ObjectNormalizer~6oe7xv3" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
+    <service id=".2_ObjectNormalizer~x3Qrjgw" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="property_accessor"/>
       <argument type="service" id="property_info"/>
     </service>
-    <service id=".1_Serializer~6oe7xv3" class="Symfony\Component\Serializer\Serializer">
+    <service id=".1_Serializer~x3Qrjgw" class="Symfony\Component\Serializer\Serializer">
       <argument type="collection">
-        <argument type="service" id=".2_ObjectNormalizer~6oe7xv3"/>
+        <argument type="service" id=".2_ObjectNormalizer~x3Qrjgw"/>
       </argument>
       <argument type="collection">
         <argument type="service" id="serializer.encoder.json"/>
@@ -5344,10 +5420,10 @@
     <service id="api_platform.cache.openapi" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>V093Oqm1jt</argument>
+      <argument>EGIEyLygNu</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6142,8 +6218,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php/templates</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -6320,7 +6396,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\Users\victo\MeusProjetos\Webgift-mobile\Api_php</argument>
+      <argument>C:\Users\adria\source\repos\projetos\ionic\Webgift-mobile\Api_php</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -6491,11 +6567,31 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthController" class="App\Controller\AuthController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthController" class="App\Controller\AuthController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AuthController" class="App\Controller\AuthController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DadosBancoController" class="App\Controller\DadosBancoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DadosBancoController" class="App\Controller\DadosBancoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\DadosBancoController" class="App\Controller\DadosBancoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GiftcardProdutoController" class="App\Controller\GiftcardProdutoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GiftcardProdutoController" class="App\Controller\GiftcardProdutoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GiftcardProdutoController" class="App\Controller\GiftcardProdutoController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GiftcardSerialController" class="App\Controller\GiftcardSerialController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GiftcardSerialController" class="App\Controller\GiftcardSerialController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GiftcardSerialController" class="App\Controller\GiftcardSerialController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GiftcardValueController" class="App\Controller\GiftcardValueController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GiftcardValueController" class="App\Controller\GiftcardValueController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GiftcardValueController" class="App\Controller\GiftcardValueController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PagamentoController" class="App\Controller\PagamentoController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PagamentoController" class="App\Controller\PagamentoController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PagamentoController" class="App\Controller\PagamentoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UsuarioController" class="App\Controller\UsuarioController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VendaController" class="App\Controller\VendaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VendaController" class="App\Controller\VendaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\VendaController" class="App\Controller\VendaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AuthUsuarioRepository" class="App\Repository\AuthUsuarioRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AuthUsuarioRepository" class="App\Repository\AuthUsuarioRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GiftcardProdutoRepository" class="App\Repository\GiftcardProdutoRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GiftcardProdutoRepository" class="App\Repository\GiftcardProdutoRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UsuarioRepository" class="App\Repository\UsuarioRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UsuarioRepository" class="App\Repository\UsuarioRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7102,6 +7198,61 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.zHyJIs5" method="withContext"/>
     </service>
+    <service id=".service_locator.afvusP0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repository" type="service_closure" id="App\Repository\GiftcardProdutoRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::listarTodos()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardProdutoController::listarTodos()"/>
+      <argument>App\Controller\GiftcardProdutoController::listarTodos()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.afvusP0" method="withContext"/>
+    </service>
+    <service id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::buscarPorId()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardProdutoController::buscarPorId()"/>
+      <argument>App\Controller\GiftcardProdutoController::buscarPorId()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.afvusP0" method="withContext"/>
+    </service>
+    <service id=".service_locator.Kq27LHM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Kq27LHM.App\Controller\GiftcardProdutoController::criar()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardProdutoController::criar()"/>
+      <argument>App\Controller\GiftcardProdutoController::criar()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Kq27LHM" method="withContext"/>
+    </service>
+    <service id=".service_locator.7ixVdVI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repository" type="service_closure" id="App\Repository\GiftcardValueRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.7ixVdVI.App\Controller\GiftcardValueController::listarPorProdutoId()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardValueController::listarPorProdutoId()"/>
+      <argument>App\Controller\GiftcardValueController::listarPorProdutoId()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.7ixVdVI" method="withContext"/>
+    </service>
+    <service id=".service_locator.Iw8nn9q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="produtoRepo" type="service_closure" id="App\Repository\GiftcardProdutoRepository"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Iw8nn9q.App\Controller\GiftcardValueController::criar()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardValueController::criar()"/>
+      <argument>App\Controller\GiftcardValueController::criar()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Iw8nn9q" method="withContext"/>
+    </service>
     <service id=".service_locator.qHDU7Ro" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7114,17 +7265,69 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.qHDU7Ro" method="withContext"/>
     </service>
-    <service id=".service_locator.gxIvkJl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Xsh8tt4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="useCase" type="service_closure" id=".errored..service_locator.Xsh8tt4.Core\Domain\UseCase\Vendas\ListarComprasDoUsuario"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Xsh8tt4.App\Controller\VendaController::listarPorUsuario()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\VendaController::listarPorUsuario()"/>
+      <argument>App\Controller\VendaController::listarPorUsuario()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Xsh8tt4" method="withContext"/>
+    </service>
+    <service id=".service_locator.yZLsXo8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="useCase" type="service_closure" id="Core\UseCase\GiftCard\ComprarGiftcardUseCase"/>
+      </argument>
+    </service>
+    <service id=".service_locator.yZLsXo8.App\Controller\VendaController::comprar()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\VendaController::comprar()"/>
+      <argument>App\Controller\VendaController::comprar()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.yZLsXo8" method="withContext"/>
+    </service>
+    <service id=".service_locator.dzVyuCZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="useCase" type="service_closure" id=".errored..service_locator.dzVyuCZ.Core\UseCase\GiftcardProduto\DeletarGiftcardProdutoUseCase"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dzVyuCZ.App\Controller\VendaController::deletar()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\VendaController::deletar()"/>
+      <argument>App\Controller\VendaController::deletar()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.dzVyuCZ" method="withContext"/>
+    </service>
+    <service id=".service_locator.iqTbbfR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
+        <argument key="App\Controller\GiftcardProdutoController::listarTodos" type="service_closure" id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::listarTodos()"/>
+        <argument key="App\Controller\GiftcardProdutoController::buscarPorId" type="service_closure" id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::buscarPorId()"/>
+        <argument key="App\Controller\GiftcardProdutoController::criar" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\GiftcardProdutoController::criar()"/>
+        <argument key="App\Controller\GiftcardValueController::listarPorProdutoId" type="service_closure" id=".service_locator.7ixVdVI.App\Controller\GiftcardValueController::listarPorProdutoId()"/>
+        <argument key="App\Controller\GiftcardValueController::criar" type="service_closure" id=".service_locator.Iw8nn9q.App\Controller\GiftcardValueController::criar()"/>
         <argument key="App\Controller\UsuarioController::viewUser" type="service_closure" id=".service_locator.qHDU7Ro.App\Controller\UsuarioController::viewUser()"/>
+        <argument key="App\Controller\VendaController::listarPorUsuario" type="service_closure" id=".service_locator.Xsh8tt4.App\Controller\VendaController::listarPorUsuario()"/>
+        <argument key="App\Controller\VendaController::comprar" type="service_closure" id=".service_locator.yZLsXo8.App\Controller\VendaController::comprar()"/>
+        <argument key="App\Controller\VendaController::deletar" type="service_closure" id=".service_locator.dzVyuCZ.App\Controller\VendaController::deletar()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
+        <argument key="App\Controller\GiftcardProdutoController:listarTodos" type="service_closure" id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::listarTodos()"/>
+        <argument key="App\Controller\GiftcardProdutoController:buscarPorId" type="service_closure" id=".service_locator.afvusP0.App\Controller\GiftcardProdutoController::buscarPorId()"/>
+        <argument key="App\Controller\GiftcardProdutoController:criar" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\GiftcardProdutoController::criar()"/>
+        <argument key="App\Controller\GiftcardValueController:listarPorProdutoId" type="service_closure" id=".service_locator.7ixVdVI.App\Controller\GiftcardValueController::listarPorProdutoId()"/>
+        <argument key="App\Controller\GiftcardValueController:criar" type="service_closure" id=".service_locator.Iw8nn9q.App\Controller\GiftcardValueController::criar()"/>
         <argument key="App\Controller\UsuarioController:viewUser" type="service_closure" id=".service_locator.qHDU7Ro.App\Controller\UsuarioController::viewUser()"/>
+        <argument key="App\Controller\VendaController:listarPorUsuario" type="service_closure" id=".service_locator.Xsh8tt4.App\Controller\VendaController::listarPorUsuario()"/>
+        <argument key="App\Controller\VendaController:comprar" type="service_closure" id=".service_locator.yZLsXo8.App\Controller\VendaController::comprar()"/>
+        <argument key="App\Controller\VendaController:deletar" type="service_closure" id=".service_locator.dzVyuCZ.App\Controller\VendaController::deletar()"/>
       </argument>
     </service>
     <service id=".service_locator.mJTctrn" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7251,10 +7454,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator..DQ9dYu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7R62h6U" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AuthUsuarioRepository" type="service_closure" id="App\Repository\AuthUsuarioRepository"/>
+        <argument key="App\Repository\GiftcardProdutoRepository" type="service_closure" id="App\Repository\GiftcardProdutoRepository"/>
         <argument key="App\Repository\UsuarioRepository" type="service_closure" id="App\Repository\UsuarioRepository"/>
       </argument>
     </service>
@@ -7319,9 +7523,45 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\DadosBancoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\DadosBancoController"/>
+      <argument>App\Controller\DadosBancoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\GiftcardProdutoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardProdutoController"/>
+      <argument>App\Controller\GiftcardProdutoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\GiftcardSerialController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardSerialController"/>
+      <argument>App\Controller\GiftcardSerialController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\GiftcardValueController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GiftcardValueController"/>
+      <argument>App\Controller\GiftcardValueController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\PagamentoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PagamentoController"/>
+      <argument>App\Controller\PagamentoController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\UsuarioController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\UsuarioController"/>
       <argument>App\Controller\UsuarioController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\VendaController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\VendaController"/>
+      <argument>App\Controller\VendaController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -7518,7 +7758,13 @@
         <argument type="collection">
           <argument>App\Kernel</argument>
           <argument>App\Controller\AuthController</argument>
+          <argument>App\Controller\DadosBancoController</argument>
+          <argument>App\Controller\GiftcardProdutoController</argument>
+          <argument>App\Controller\GiftcardSerialController</argument>
+          <argument>App\Controller\GiftcardValueController</argument>
+          <argument>App\Controller\PagamentoController</argument>
           <argument>App\Controller\UsuarioController</argument>
+          <argument>App\Controller\VendaController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -7624,7 +7870,7 @@
       <argument type="service" id="serializer.mapping.chain_loader"/>
     </service>
     <service id="api_platform.openapi.normalizer.api_gateway.inner" class="ApiPlatform\OpenApi\Serializer\OpenApiNormalizer">
-      <argument type="service" id=".1_Serializer~6oe7xv3"/>
+      <argument type="service" id=".1_Serializer~x3Qrjgw"/>
     </service>
     <service id="api_platform.openapi.normalizer.legacy.inner" class="ApiPlatform\OpenApi\Serializer\ApiGatewayNormalizer">
       <tag name="container.decorator" id="api_platform.openapi.normalizer" inner="api_platform.openapi.normalizer.api_gateway.inner"/>
@@ -7632,6 +7878,12 @@
     </service>
     <service id=".errored..service_locator.zHyJIs5.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.zHyJIs5&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
+    </service>
+    <service id=".errored..service_locator.Xsh8tt4.Core\Domain\UseCase\Vendas\ListarComprasDoUsuario" class="Core\Domain\UseCase\Vendas\ListarComprasDoUsuario">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Xsh8tt4&quot;: it references class &quot;Core\Domain\UseCase\Vendas\ListarComprasDoUsuario&quot; but no such service exists."/>
+    </service>
+    <service id=".errored..service_locator.dzVyuCZ.Core\UseCase\GiftcardProduto\DeletarGiftcardProdutoUseCase" class="Core\UseCase\GiftcardProduto\DeletarGiftcardProdutoUseCase">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.dzVyuCZ&quot;: it references class &quot;Core\UseCase\GiftcardProduto\DeletarGiftcardProdutoUseCase&quot; but no such service exists."/>
     </service>
     <service id=".App\Command\CriarAdminCommand.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>usuario:criar-vitu</argument>
@@ -8420,7 +8672,10 @@
         <argument key="Symfony\Bridge\Twig\Extension\SerializerRuntime" type="service_closure" id="twig.runtime.serializer"/>
       </argument>
     </service>
+    <service id="Core\Domain\GiftCard\Repository\GiftcardSerialRepositoryInterface" alias="App\Repository\GiftcardSerialRepository"/>
+    <service id="Core\Domain\Pagamento\Repository\PagamentoRepositoryInterface" alias="App\Repository\PagamentoRepository"/>
     <service id="Core\Domain\Usuario\Repository\IUsuarioRepository" alias="App\Repository\UsuarioRepository"/>
+    <service id="Core\Domain\Venda\Repository\VendaRepositoryInterface" alias="App\Repository\VendaRepository"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
@@ -8602,7 +8857,7 @@
     <service id="lexik_jwt_authentication.key_loader" alias="lexik_jwt_authentication.key_loader.raw" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.gxIvkJl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.iqTbbfR"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
@@ -8687,7 +8942,14 @@
     <service id="api_platform.metadata.resource.metadata_collection_factory.cached.inner" alias="api_platform.doctrine.orm.metadata.resource.metadata_collection_factory"/>
     <service id=".service_locator.GIuJv7e" alias="api_platform.filter_locator"/>
     <service id=".service_locator.n_ENPtW" alias=".service_locator.zHyJIs5"/>
+    <service id=".service_locator.8i0fxmh" alias=".service_locator.afvusP0"/>
+    <service id=".service_locator.HQZddX8" alias=".service_locator.Kq27LHM"/>
+    <service id=".service_locator.VYdb0Qi" alias=".service_locator.7ixVdVI"/>
+    <service id=".service_locator.nz2arOE" alias=".service_locator.Iw8nn9q"/>
     <service id=".service_locator.tilX6IF" alias=".service_locator.qHDU7Ro"/>
+    <service id=".service_locator.iUyUqbo" alias=".service_locator.Xsh8tt4"/>
+    <service id=".service_locator.xwIrQMY" alias=".service_locator.yZLsXo8"/>
+    <service id=".service_locator.Nbaocvz" alias=".service_locator.dzVyuCZ"/>
     <service id=".service_locator.BkMMBek" alias=".service_locator.ZyP9f7K"/>
   </services>
 </container>

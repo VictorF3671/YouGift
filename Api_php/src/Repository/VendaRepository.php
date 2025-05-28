@@ -1,5 +1,5 @@
 <?php
-namespace Infra\Repository;
+namespace App\Repository;
 
 use Core\Domain\Venda\Entity\Venda;
 use Core\Domain\Venda\Repository\VendaRepositoryInterface;
