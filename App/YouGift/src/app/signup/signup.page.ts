@@ -16,7 +16,7 @@ import { AxiosContextService } from 'src/server/axiosContext.server';
 })
 export class SignupPage implements OnInit {
   private axios = this.axiosContext.getAxiosInstance();
-  user: IUsuario = {id: 0 , cpf: '', fullname: '', email:'', password: '', phone_number: '', group: 0 };
+  user: IUsuario = {id: 0 , cpf: '', nome: '', email:'', senha: '', telefone: ''};
   mostrarErro = false;
   mensagemErro = '';
   constructor(private router: Router, private axiosContext: AxiosContextService) { }
@@ -24,17 +24,19 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
   async verifySignUp() {
-    if (!this.user.email || !this.user.fullname || !this.user.password || !this.user.phone_number  || !this.user.cpf) {
+    if (!this.user.email || !this.user.nome || !this.user.senha || !this.user.telefone  || !this.user.cpf) {
       this.mensagemErro = " Preencha todos os campos corretamente";
       this.mostrarErro = true;
       return;
     }
     try {
-      const response = this.axios.post('/users/', this.user)
-      // if (response.data.success) {
-      //   this.router.navigate(['/login'])
-
-      // }
+      const response = await this.axios.post('/auth/registrar-usuario', this.user)
+      if(response.data){
+        console.log(response.data)
+      
+      this.router.navigate(['/login'])
+      }
+      
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
         this.mensagemErro = "Usuário ou senha incorretos";

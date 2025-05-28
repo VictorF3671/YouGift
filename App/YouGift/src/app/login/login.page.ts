@@ -41,11 +41,13 @@ export class LoginPage implements OnInit {
     try{
       console.log(this.user)
       console.log(this.user)
-      const response = await this.axios.post('http://localhost:8000/api/auth/login', this.user)
+      const response = await this.axios.post('/auth/login', this.user)
      
       if(response.data.token){
         const token = response.data.token
+        const roles = response.data.roles
         localStorage.setItem('token', token)
+        localStorage.setItem('role', roles)
         this.router.navigate(['/home'])
       }
     }catch (error: any) {

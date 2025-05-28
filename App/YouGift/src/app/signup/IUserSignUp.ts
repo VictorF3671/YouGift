@@ -1,9 +1,9 @@
 export interface IUsuario{
     id: number;
     cpf: string;
-    fullname: string;
+    nome: string;
     email: string;
-    password: string;
-    phone_number: string;    
-    group: number
+    senha: string;
+    telefone: string;    
+   
 }
