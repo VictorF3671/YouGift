@@ -7,12 +7,10 @@ import { AxiosContextService } from 'src/server/axiosContext.server';
 export interface IUsuario {
   id: number;
   cpf: string;
-  fullname: string;
+  nome: string;
   email: string;
-  password: string;
-  phone_number: string;
-  group: number;
-}
+  telefone: string;
+  }
 
 @Component({
   selector: 'app-usuarios-cadastrados',
@@ -26,11 +24,9 @@ export class UsuariosCadastradosPage implements OnInit {
     {
       id: 0,
       cpf: '',
-      fullname: '',
+      nome: '',
       email: '',
-      password: '',
-      phone_number: '',
-      group: 2
+      telefone: '',
     }
   ]; 
   private axios = this.axiosContext.getAxiosInstance();
@@ -40,17 +36,41 @@ export class UsuariosCadastradosPage implements OnInit {
     this.carregarUsuarios();
   }
 
+  
   async carregarUsuarios() {
-    const response =  await this.axios.get('/users')
+    try{
+    const response =  await this.axios.get('/usuario/listar-todos')
     this.users = response.data     
+    } catch (error) {
+      console.error('Erro ao carregar usuários da API, usando dados mockados.', error);
+      this.users = [
+        {
+          id: 1,
+          cpf: '123.456.789-00',
+          nome: 'João da Silva',
+          email: 'joao@example.com',
+          telefone: '(11) 98765-4321'
+        },
+        {
+          id: 2,
+          cpf: '987.654.321-00',
+          nome: 'Maria Oliveira',
+          email: 'maria@example.com',
+          telefone: '(21) 91234-5678'
+        },
+        {
+          id: 3,
+          cpf: '111.222.333-44',
+          nome: 'Carlos Souza',
+          email: 'carlos@example.com',
+          telefone: '(31) 99876-5432'
+        }
+      ];
+    }
   }
   
 
-  excluirUsuario(id: number) {
-    // if (confirm('Tem certeza que deseja excluir este gift?')) {
-    //   this.http.delete(`http://sua-api.com/gifts/${id}`).subscribe(() => {
-    //     this.carregarGifts(); // Recarrega a lista após exclusão
-    //   });
-    // }
-  }
+  
+   
+  
 }

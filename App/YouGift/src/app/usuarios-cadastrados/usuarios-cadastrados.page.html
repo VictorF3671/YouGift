@@ -14,32 +14,29 @@
       </ion-breadcrumb>
       <ion-breadcrumb href="/usuarios-cadastrados">
         <ion-icon slot="start" name="id-card"></ion-icon>
-        Gifts Cadastradosd
+        Usuarios Cadastrados
       </ion-breadcrumb>
     </ion-breadcrumbs>
   </div>
 
+  <div class="scroll-wrapper">
   <ion-grid class="custom-table">
     <ion-row class="table-header">
       <ion-col size="1">ID</ion-col>
       <ion-col size="2">Nome</ion-col>
       <ion-col size="3">CPF</ion-col>
       <ion-col size="2">Email</ion-col>
-      <ion-col size="2">Telefone</ion-col>
-      <ion-col size="2" class="text-center">Ações</ion-col>
+      <ion-col size="3">Telefone</ion-col>
     </ion-row>
 
     <ion-row *ngFor="let user of users" class="table-row">
       <ion-col size="1">{{ user.id }}</ion-col>
-      <ion-col size="2">{{ user.fullname }}</ion-col>
+      <ion-col size="2">{{ user.nome }}</ion-col>
       <ion-col size="3">{{ user.cpf }}</ion-col>
       <ion-col size="2">{{ user.email }}</ion-col>
-      <ion-col size="2">{{ user.phone_number }}</ion-col>
-      <ion-col size="2" class="text-center">
-        <ion-button color="danger" fill="clear" (click)="excluirUsuario(user.id)">
-          <ion-icon name="trash-outline"></ion-icon>
-        </ion-button>
-      </ion-col>
+      <ion-col size="2" style="margin-left: 45px;">{{ user.telefone }}</ion-col>
+      
     </ion-row>
   </ion-grid>
+  </div>
 </ion-content>
