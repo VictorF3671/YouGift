@@ -14,12 +14,18 @@
   gap: 10px;
 }
 
+.scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+}
 .custom-table {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   font-size: 12px;
-  overflow-y: auto;
+  min-width: 600px;
+  white-space: nowrap;
 }
 
 .table-header {

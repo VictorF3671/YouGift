@@ -6,8 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { AxiosContextService } from 'src/server/axiosContext.server';
 import { CompraService } from '../services/compra.service';
 import { IGiftCard } from '../home/IGiftCardHome';
+import { GiftTransferService } from '../services/gift-transfer.service';
 
 export interface ICompra{
+  nome: string,
   id_company: number;
   id_value: number;
   value: number;
@@ -29,6 +31,7 @@ export class TelaCompraPage {
  
  
   compra: ICompra = {
+    nome: '',
     id_company: 0,
     id_value: 0,
     value: 0,
@@ -48,15 +51,29 @@ values_gifts: any[] = [];
 
   valorSelecionado = 50;
   quantity = 1;
+ mockedValues = [
+    { id: 1, value: 25 },
+    { id: 2, value: 50 },
+    { id: 3, value: 100 },
+  ];
 
-  constructor(private route: ActivatedRoute, private routerN: Router, private axiosContext: AxiosContextService,  private compraContext: CompraService) {}
+  constructor(private route: ActivatedRoute, private routerN: Router, private axiosContext: AxiosContextService,  private compraContext: CompraService, private giftTransfer: GiftTransferService) {}
   private axios = this.axiosContext.getAxiosInstance();
 
   ngOnInit() {
-    const idParam = this.route.snapshot.paramMap.get('id');
-    const id = Number(idParam);
-    this.carregarGifts(id);
-    this.carregarValues(id)
+    const giftFromService = this.giftTransfer.getGift();
+    console.log(giftFromService)
+    if (giftFromService && giftFromService.id) {
+      this.gift = giftFromService;
+      this.carregarValues(giftFromService.id);
+    } else {
+      //se voltar, apaga isso de cima e deixa só esses aqui em baixo
+      const idParam = this.route.snapshot.paramMap.get('id');
+      const id = Number(idParam);
+      this.carregarGifts(id);
+      this.carregarValues(id);
+    }
+  
   }
 
  async carregarGifts(id: number) {
@@ -75,10 +92,11 @@ async carregarValues(id:number){
     this.values_gifts = Array.isArray(response.data) ? response.data : [response.data];
     console.log('valores carregado:', this.values_gifts);
   } catch(error) {
-    console.error('Erro ao carregar valores:', error);
-    this.values_gifts = [];
+      console.warn('API falhou, usando valores mockados.');
+      this.values_gifts = this.mockedValues;
+    }
   }
-}
+
 
   selecionarValor(amount: number) {
     this.valorSelecionado = amount;
@@ -105,6 +123,7 @@ async carregarValues(id:number){
   }
 
   this.compra = {
+    nome: this.gift.name,
     id_company: this.gift.id, 
     id_value: valueGift.id,
     value: parseFloat(valueGift.value),
@@ -123,6 +142,8 @@ async carregarValues(id:number){
 
   
   navegarHome() {
+    this.compraContext.clear()
+    this.giftTransfer.clear()
     this.routerN.navigate(['/home']);
   }
 }

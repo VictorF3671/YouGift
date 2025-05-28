@@ -37,25 +37,25 @@ export class LoginPage implements OnInit {
         return;
 
      }
-    try{
-      const response = await this.axios.post('/auth/login', this.user)
+    // try{
+      // const response = await this.axios.post('/auth/login', this.user)
      
-      if(response.data.token){
-        const token = response.data.token
-        const role = response.data.role
-        console.log(response.data)
-        localStorage.setItem('token', token)
-        localStorage.setItem('role', role)
+      // if(response.data.token){
+      //   const token = response.data.token
+      //   const role = response.data.role
+      //   console.log(response.data)
+      //   localStorage.setItem('token', token)
+      //   localStorage.setItem('role', role)
         this.router.navigate(['/home'])
-      }
-    }catch (error: any) {
-  if (error.response && error.response.status === 401) {
-    this.mensagemErro = "Usuário ou senha incorretos";
-  } else {
-    this.mensagemErro = "Erro na conexão com o servidor";
-  }
-  this.mostrarErro = true;
-}
+//       }
+//     }catch (error: any) {
+//   if (error.response && error.response.status === 401) {
+//     this.mensagemErro = "Usuário ou senha incorretos";
+//   } else {
+//     this.mensagemErro = "Erro na conexão com o servidor";
+//   }
+//   this.mostrarErro = true;
+// }
   
     
   }

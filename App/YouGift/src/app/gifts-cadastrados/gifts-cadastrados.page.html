@@ -29,13 +29,13 @@
       </ion-button>
     </div>
   </div>
-
+<div class="scroll-wrapper">
   <ion-grid class="custom-table">
     <ion-row class="table-header">
       <ion-col size="1">ID</ion-col>
       <ion-col size="2">Nome</ion-col>
       <ion-col size="3">Descrição</ion-col>
-      <ion-col size="2" class="text-center">Ações</ion-col>
+      <ion-col  style="margin-left: 100px;" size="2" class="text-center">Ações</ion-col>
     </ion-row>
 
     <ion-row *ngFor="let gift of giftcards" class="table-row">
@@ -43,10 +43,11 @@
       <ion-col size="2">{{ gift.name }}</ion-col>
       <ion-col size="3">{{ gift.desc }}</ion-col>
       <ion-col size="2" class="text-center">
-        <ion-button color="danger" fill="clear" (click)="excluirGift(gift.id)">
+        <ion-button style="margin-left: 110px;" color="danger" fill="clear" (click)="excluirGift(gift.id)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
+  </div>
 </ion-content>

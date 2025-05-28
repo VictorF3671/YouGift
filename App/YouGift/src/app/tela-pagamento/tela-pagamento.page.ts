@@ -6,6 +6,8 @@ import { YCardErrorComponent } from '../components/ycard-error/ycard-error.compo
 import { Router } from '@angular/router';
 import { CompraService } from '../services/compra.service';
 import { AxiosContextService } from 'src/server/axiosContext.server';
+import { ICompra } from '../tela-compra/tela-compra.page';
+import { IGiftCard } from '../home/IGiftCardHome';
 
 @Component({
   selector: 'app-tela-pagamento',
@@ -15,51 +17,76 @@ import { AxiosContextService } from 'src/server/axiosContext.server';
   imports: [IonicModule, CommonModule, FormsModule, YCardErrorComponent]
 })
 export class TelaPagamentoPage implements OnInit {
-   mostrarErro = false;
+  mostrarErro = false;
   mensagemErro = '';
+  compra: ICompra = {
+    nome: '',
+    id_company: 0,
+    id_value: 0,
+    value: 0,
+    quantidade: 1,
+    valorTotal: 0
+  };
+
   constructor(private router: Router, private compraContext: CompraService, private axiosContext: AxiosContextService) { }
-   private axios = this.axiosContext.getAxiosInstance();
+  private axios = this.axiosContext.getAxiosInstance();
   ngOnInit() {
-    const compra = this.compraContext.getCompra();
+   const compra = this.compraContext.getCompra();
   if (compra) {
-    console.log('Dados da compra:', compra);
+    this.compra = compra; // <-- esta linha estava faltando!
+    console.log('Dados da compra:', this.compra);
+    this.quantidade = this.compra.quantidade;
+
   }
-}
-
-metodoSelecionado: string = 'cartao';
-cartao = {
-  numero: '',
-  nome: '',
-  validade: '',
-  cvv: ''
-};
-
-gift = {
-  nome: 'Netflix 50',
-  valor: 50
-};
-
-quantidade = 1;
-
-async carregarGifts(id: number) {
-  try {
-    const response = await this.axios.get(`/giftcards/${id}`);
-    this.gift = response.data;
-  } catch (error) {
-    console.error('Erro ao carregar gift:', error);
   }
-}
+  metodoSelecionado: string = 'cartao';
+  cartao = {
+    numero: '',
+    nome: '',
+    validade: '',
+    cvv: ''
+  };
 
-finalizarCompra() {
-  const total = this.gift.valor * this.quantidade;
+  gift: IGiftCard = {
+    id: 0,
+    name: '',
+    desc: '',
+    image_url: '',
+    company: ''
+  };
+  
+  quantidade = 1;
 
-  // Chamada da API, geração dos seriais, envio por e-mail etc.
-}
+  async carregarGifts(id: number) {
+    try {
+
+      const response = await this.axios.get(`/giftcards/${this.compra.id_company}`);
+      this.gift = response.data;
+    } catch (error) {
+      console.error('Erro ao carregar gift:', error);
+    }
+  }
+
+
+  finalizarCompra() {
+    if( !this.cartao.cvv || !this.cartao.nome || !this.cartao.numero || !this.cartao.validade){
+      this.mensagemErro = "Preencha todos os campos corretamente";
+        this.mostrarErro = true;
+        return;
+    }
+
+    try{
+      //chamar post de compra
+      this.router.navigate(['/home']);
+    }catch(error){
+
+    }
+  }
   fecharErro() {
     this.mostrarErro = false;
   }
-   navegarHome() {
-   
+  navegarHome() {
+
     this.router.navigate(['/home']);
   }
 }

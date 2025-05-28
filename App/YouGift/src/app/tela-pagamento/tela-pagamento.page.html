@@ -1,9 +1,5 @@
-<ycard-error
-    [message]="mensagemErro"
-    [type]="'error'"
-    [visible]="mostrarErro"
-    (onClose)="fecharErro()">
-  </ycard-error>
+<ycard-error [message]="mensagemErro" [type]="'error'" [visible]="mostrarErro" (onClose)="fecharErro()">
+</ycard-error>
 <ion-header>
   <ion-toolbar>
     <ion-title>Pagamento</ion-title>
@@ -47,13 +43,14 @@
           </ion-item>
         </div>
 
-        
-        <div *ngIf="metodoSelecionado === 'pix'" >
-          <div class="alinhei"> 
-          <ion-label>Use o QR Code abaixo para pagar com PIX: </ion-label>
-          
-          <img src="https://api.qrserver.com/v1/create-qr-code/?data=chave-pix-aqui&size=200x200" alt="QR Code PIX" style="width: 200px; margin-top: 10px;">
-        </div>
+
+        <div *ngIf="metodoSelecionado === 'pix'">
+          <div class="alinhei">
+            <ion-label>Use o QR Code abaixo para pagar com PIX: </ion-label>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=chave-pix-aqui&size=200x200" alt="QR Code PIX"
+              style="width: 200px; margin-top: 10px;">
+          </div>
         </div>
       </ion-col>
 
@@ -65,17 +62,24 @@
               <ion-card-title>Resumo da Compra</ion-card-title>
             </ion-card-header>
             <ion-card-content>
+              <p><strong>Produto:</strong> {{compra.nome}}</p>
+              <p><strong>Valor unitário:</strong> R$ {{compra.value}}</p>
+              <p><strong>Quantidade:</strong> {{compra.quantidade}}</p>
+              <p><strong>Total:</strong> <strong style="color: #3880ff;">R$ {{compra.valorTotal}}</strong></p>
+            </ion-card-content>
+            <!-- <ion-card-content>
               <p><strong>Produto:</strong> {{gift.nome}}</p>
               <p><strong>Valor unitário:</strong> R$ {{gift.valor}}</p>
               <p><strong>Quantidade:</strong> {{quantidade}}</p>
               <p><strong>Total:</strong> <strong style="color: #3880ff;">R$ {{gift.valor * quantidade}}</strong></p>
-            </ion-card-content>
+            </ion-card-content> -->
           </ion-card>
           <div class="container-button">
-          <ion-button expand="block"  color="warning" fill="outline" (click)="navegarHome()">Cancelar</ion-button>
-          <ion-button expand="block"  color="success" (click)="finalizarCompra()">
-            Finalizar Compra
-          </ion-button>
+            <ion-button expand="block" color="warning" fill="outline" (click)="navegarHome()">Cancelar</ion-button>
+            <ion-button expand="block" color="success" (click)="finalizarCompra()">
+              Finalizar Compra
+            </ion-button>
+      
           </div>
         </div>
       </ion-col>

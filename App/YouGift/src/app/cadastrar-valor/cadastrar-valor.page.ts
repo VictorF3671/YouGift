@@ -22,7 +22,14 @@ export class CadastrarValorPage implements OnInit {
   companies: any[] = [];
   empresaSelecionada: string = '';
   precos: number[] = [0]; 
-
+  mockedcompanies = [
+  { id: 1, name: 'Steam' },
+  { id: 2, name: 'Amazon' },
+  { id: 3, name: 'PlayStation (PSN)' },
+  { id: 4, name: 'Paramount+' },
+  { id: 5, name: 'Razer Gold' },
+  { id: 6, name: 'Spotify' }
+];
   constructor(private router: Router, private axiosContext: AxiosContextService) {
 
   }
@@ -33,10 +40,10 @@ export class CadastrarValorPage implements OnInit {
 
   async carregarEmpresas() {
     try {
-      const response = await this.axios.get('/giftcards');
+      const response = await this.axios.get('/giftcard-produtos');
       this.companies = response.data;
     } catch (error) {
-      console.error('Erro ao carregar empresas', error);
+      this.companies = this.mockedcompanies
     }
   }
 
